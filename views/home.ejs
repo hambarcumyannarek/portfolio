@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="/css/home.css">
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="navContainer container">
+            <div class="logo">
+                <img src="/images/logo-black.png" alt="">
+            </div>
+            <ul class="links">
+                <li class="link"><a class="linkText" href="#">Home</a></li>
+                <li class="link linkBg">
+                    <div class="bgLinkTop">
+                        <span class="linkText">Property</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="linksCard">
+                        <a href="#"><li class="bgDownLink"><i class="fa-solid fa-arrow-right"></i><span>Property for Sale</span></li></a>
+                        <a href="#"><li class="bgDownLink"><i class="fa-solid fa-arrow-right"></i><span>Property for Rent</span></li></a>
+                    </ul>
+                </li>
+                <li class="link linkBg">
+                    <div class="bgLinkTop">
+                        <span class="linkText">Account</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="linksCard">
+                        <a href="#"><li class="bgDownLink"><i class="fa-solid fa-arrow-right"></i><span>Personal Info</span></li></a>
+                        <a href="#"><li class="bgDownLink"><i class="fa-solid fa-arrow-right"></i><span>Password & Security</span></li></a>
+                        <a href="#"><li class="bgDownLink"><i class="fa-solid fa-arrow-right"></i><span>My Properties</span></li></a>
+                        <a href="#"><li class="bgDownLink"><i class="fa-solid fa-arrow-right"></i><span>Wishes</span></li></a>
+                        <a href="#"><li class="bgDownLink"><i class="fa-solid fa-arrow-right"></i><span>Reviews</span></li></a>
+                    </ul>
+                </li>
+                <li class="link"><a class="linkText" href="#">Sign In</a></li>
+                <li class="link"><a class="linkText" href="#">Sign Up</a></li>
+            </ul>
+            <div class="icons">
+                <label class="switch switchBigNav">
+                    <input class="darkBtn" type="checkbox">
+                    <span class="switchSlider round"></span>
+                  </label>
+                <button class="btn menuBtn"><i class="fa-solid fa-bars"></i></button>
+                <a href="/property"><button class="btn"><i class="fa-solid fa-plus"></i><span>Addproperty</span></button></a>
+            </div>
+        </div>
+
+        <div class="responsiveMenu">
+            <div class="aside">
+                <div class="top">
+                    <div class="logo">
+                        <img src="/images/logo-black.png" alt="">
+                    </div>
+                    <button class="btn closeBtn"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+
+                <ul class="links">
+                    <li class="link"><a class="linkText" href="#">Home</a></li>
+                    <li class="link linkBg">
+                        <div class="bgLinkTop">
+                            <span class="linkText">Property</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <ul class="linksCard">
+                            <a href="#"><li class="bgDownLink">Property for Sale</li></a>
+                            <a href="#"><li class="bgDownLink">Property for Rent</li></a>
+                        </ul>
+                    </li>
+                    <li class="link linkBg">
+                        <div class="bgLinkTop">
+                            <span class="linkText">Account</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <ul class="linksCard">
+                            <a href="#"><li class="bgDownLink">Personal Info</li></a>
+                            <a href="#"><li class="bgDownLink">Password & Security</li></a>
+                            <a href="#"><li class="bgDownLink">My Properties</li></a>
+                            <a href="#"><li class="bgDownLink">Wishes</li></a>
+                            <a href="#"><li class="bgDownLink">Reviews</li></a>
+                        </ul>
+                    </li>
+                    <li class="link"><a class="linkText" href="#">Sign In</a></li>
+                    <li class="link"><a class="linkText" href="#">Sign Up</a></li>
+                </ul>
+
+                <label class="switch switchRespNav">
+                    <input class="darkBtn" type="checkbox">
+                    <span class="switchSlider round"></span>
+                </label>
+            </div>
+        </div>
+    </nav>
+
+    <div class="circutSection">
+        <div class="circutBox"></div>
+    </div>
+
+    <div id="hero" class="section">
+        <div class="container heroContainer">
+            <div class="content">
+                <button class="topBtn">A Vision for Your Life</button>
+                <h1 class="mainTitle">Find Your Best <br> <span>Real Estate</span></h1>
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernat odit aut fugit, sed quia consequuntur magni dolores qui ratione sequi nesciunt.</p>
+                <div class="bigSearch">
+                    <div class="buttons">
+                        <button class="btn sale active">Sale</button>
+                        <button class="btn rent">Rent</button>
+                    </div>
+                    <div class="searchCont">
+                        <select>
+                            <option value="" disabled hidden selected><i class="fa-solid fa-location-dot"></i><span>Location</span></option>
+                            <option value="Artashat">Artashat</option>
+                            <option value="Erevan">Erevan</option>
+                            <option value="Vostan">Vostan</option>
+                            <option value="Paris">Paris</option>
+                            <option value="London">London</option>
+                            <option value="Moscow">Moscow</option>
+                        </select>
+                        <select>
+                            <option value="" disabled hidden selected><i class="fa-solid fa-house"></i><span>Property</span></option>
+                            <option value="Artashat">Private House</option>
+                            <option value="Erevan">Appartment</option>
+                            <option value="Vostan">Exclusive Hotel</option>
+                            <option value="Paris">Restoran</option>
+                            <option value="London">Werehouse</option>
+                            <option value="Moscow">Private Room</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="" disabled hidden selected><i class="fa-solid fa-dollar-sign"></i><span>Price</span></option>
+                            <option value="100-1000">$100-1000</option>
+                            <option value="1000-10000">$1000-10000</option>
+                            <option value="10000-100000">$10000-100000</option>
+                            <option value="100000-1000000">$100000-1000000</option>
+                            <option value="1000000-5000000">$1000000-5000000</option>
+                        </select>
+                        <button>Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="property">
+        <div class="propertyContainer container">
+            <h2 class="optionTitle propertyTitle"><span>Property</span> Types</h2>
+            <div class="boxes">
+                <div class="box">
+                    <div class="img">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h3>Private House</h3>
+                    <div class="btn">
+                        <span>360 Listing</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3>Apartment</h3>
+                    <div class="btn">
+                        <span>360 Listing</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <i class="fa-solid fa-hotel"></i>
+                    </div>
+                    <h3>Exclusive Hotel</h3>
+                    <div class="btn">
+                        <span>360 Listing</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <i class="fa-solid fa-bed"></i>
+                    </div>
+                    <h3>Private Room</h3>
+                    <div class="btn">
+                        <span>360 Listing</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+                    <h3>Warehouse</h3>
+                    <div class="btn">
+                        <span>360 Listing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="section">
+        <div class="aboutContainer container">
+            <h2 class="optionTitle propertyTitle"><span>About</span> Us</h2>
+            <div class="boxes">
+                <div class="box">
+                    <div class="img">
+                        <img src="/images/about-img 1.png" alt="...">
+                    </div>
+                    <div class="content">
+                        <h2>We Are The Best And Trusted <span>Real Estate</span> Agent</h2>
+                        <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat. Sed ut perspiciatis unde omnis iste natus.</p>
+                    
+                        <div class="lists">
+                            <div class="list active">
+                                <div class="listTitle">
+                                    <div class="left">
+                                        <div class="icon"><i class="fa-solid fa-check"></i></div>
+                                        <span>Sed ut perspiciatis unde omnis?</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-down listDown"></i>
+                                </div>
+                                <div class="text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus non rerum iste saepe odio nam alias incidunt soluta. Debitis deleniti minima perferendis assumenda quo quisquam, officia facere vel beatae minus!</p>
+                                </div>
+                            </div>
+
+                            <div class="list">
+                                <div class="listTitle">
+                                    <div class="left">
+                                        <div class="icon"><i class="fa-solid fa-check"></i></div>
+                                        <span>Sed ut perspiciatis unde omnis?</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-down listDown"></i>
+                                </div>
+                                <div class="text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus non rerum iste saepe odio nam alias incidunt soluta. Debitis deleniti minima perferendis assumenda quo quisquam, officia facere vel beatae minus!</p>
+                                </div>
+                            </div>
+
+                            <div class="list">
+                                <div class="listTitle">
+                                    <div class="left">
+                                        <div class="icon"><i class="fa-solid fa-check"></i></div>
+                                        <span>Sed ut perspiciatis unde omnis?</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-down listDown"></i>
+                                </div>
+                                <div class="text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus non rerum iste saepe odio nam alias incidunt soluta. Debitis deleniti minima perferendis assumenda quo quisquam, officia facere vel beatae minus!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+               <div class="box box2">
+                    <div class="content">
+                        <h2>We Are Offernig The Best <span>Real Estate</span> Deals</h2>
+                        <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis st eligendi optio cumque nihil impedit quo minus id quod maxime placeat. <br><br> Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                        
+                        <ul class="ulLists">
+                            <li><i class="fa-solid fa-arrow-right"></i><span>A building with only one room and typically a steep pointy roof.</span></li>
+                            <li><i class="fa-solid fa-arrow-right"></i><span>A vehicle on wheels that has a permanent residence attached to it. </span></li>
+                            <li><i class="fa-solid fa-arrow-right"></i><span>Performing financial analysis and valuation of properties.</span></li>
+                            <li><i class="fa-solid fa-arrow-right"></i><span>Someone who examines buildings and works with appraisers.</span></li>
+                            <li><i class="fa-solid fa-arrow-right"></i><span>A dwelling typically made of raw materials such as bamboo, mud, and clay.</span></li>
+                        </ul>
+
+                        <button>View More</button>
+                    </div>
+                    <div class="img">
+                        <img src="/images/about-img-2 1.png" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popular" class="section">
+        <div class="container containerPopular">
+            <h2 class="optionTitle popularTitle"><span>Popular</span> Property Deals</h2>
+
+            <div class="boxes">
+                <div class="box">
+                    <div class="img">
+                        <img src="/images/home4/img1.jpg" alt="...">
+                        <div class="imgTop">
+                            <p class="type">For Sail</p>
+                            <button class="likeBtn">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="top">
+                            <h3>The Most Luxarious House</h3>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>4059 Waterview Texico, NM 88135</span>
+                            </div>
+                            <div class="info">
+                                <div class="card"><i class="fa-solid fa-bed"></i> <span>20 Bedrooms</span></div>
+                                <div class="card"><i class="fa-solid fa-bath"></i> <span>3 Bathrooms</span></div>
+                            </div>
+                        </div>
+                        <div class="down">
+                            <span class="price"><b>$2,100/</b> Night</span>
+                            <button class="btn">View More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="/images/home3/img1.jpg" alt="...">
+                        <div class="imgTop">
+                            <p class="type">For Sail</p>
+                            <button class="likeBtn">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="top">
+                            <h3>The Most Luxarious House</h3>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>4059 Waterview Texico, NM 88135</span>
+                            </div>
+                            <div class="info">
+                                <div class="card"><i class="fa-solid fa-bed"></i> <span>20 Bedrooms</span></div>
+                                <div class="card"><i class="fa-solid fa-bath"></i> <span>3 Bathrooms</span></div>
+                            </div>
+                        </div>
+                        <div class="down">
+                            <span class="price"><b>$2,100/</b> Night</span>
+                            <button class="btn">View More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="/images/home2/img1.jpg" alt="...">
+                        <div class="imgTop">
+                            <p class="type">For Sail</p>
+                            <button class="likeBtn">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="top">
+                            <h3>The Most Luxarious House</h3>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>4059 Waterview Texico, NM 88135</span>
+                            </div>
+                            <div class="info">
+                                <div class="card"><i class="fa-solid fa-bed"></i> <span>20 Bedrooms</span></div>
+                                <div class="card"><i class="fa-solid fa-bath"></i> <span>3 Bathrooms</span></div>
+                            </div>
+                        </div>
+                        <div class="down">
+                            <span class="price"><b>$2,100/</b> Night</span>
+                            <button class="btn">View More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="/images/home1/img1.jpg" alt="...">
+                        <div class="imgTop">
+                            <p class="type">For Sail</p>
+                            <button class="likeBtn">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="top">
+                            <h3>The Most Luxarious House</h3>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>4059 Waterview Texico, NM 88135</span>
+                            </div>
+                            <div class="info">
+                                <div class="card"><i class="fa-solid fa-bed"></i> <span>20 Bedrooms</span></div>
+                                <div class="card"><i class="fa-solid fa-bath"></i> <span>3 Bathrooms</span></div>
+                            </div>
+                        </div>
+                        <div class="down">
+                            <span class="price"><b>$2,100/</b> Night</span>
+                            <button class="btn">View More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="img">
+                        <img src="/images/home4/img2.jpg" alt="...">
+                        <div class="imgTop">
+                            <p class="type">For Sail</p>
+                            <button class="likeBtn">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="top">
+                            <h3>The Most Luxarious House</h3>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>4059 Waterview Texico, NM 88135</span>
+                            </div>
+                            <div class="info">
+                                <div class="card"><i class="fa-solid fa-bed"></i> <span>20 Bedrooms</span></div>
+                                <div class="card"><i class="fa-solid fa-bath"></i> <span>3 Bathrooms</span></div>
+                            </div>
+                        </div>
+                        <div class="down">
+                            <span class="price"><b>$2,100/</b> Night</span>
+                            <button class="btn">View More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="/images/home2/img3.jpg" alt="...">
+                        <div class="imgTop">
+                            <p class="type">For Sail</p>
+                            <button class="likeBtn">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="top">
+                            <h3>The Most Luxarious House</h3>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>4059 Waterview Texico, NM 88135</span>
+                            </div>
+                            <div class="info">
+                                <div class="card"><i class="fa-solid fa-bed"></i> <span>20 Bedrooms</span></div>
+                                <div class="card"><i class="fa-solid fa-bath"></i> <span>3 Bathrooms</span></div>
+                            </div>
+                        </div>
+                        <div class="down">
+                            <span class="price"><b>$2,100/</b> Night</span>
+                            <button class="btn">View More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="/images/home1/img5.jpg" alt="...">
+                        <div class="imgTop">
+                            <p class="type">For Sail</p>
+                            <button class="likeBtn">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="top">
+                            <h3>The Most Luxarious House</h3>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>4059 Waterview Texico, NM 88135</span>
+                            </div>
+                            <div class="info">
+                                <div class="card"><i class="fa-solid fa-bed"></i> <span>20 Bedrooms</span></div>
+                                <div class="card"><i class="fa-solid fa-bath"></i> <span>3 Bathrooms</span></div>
+                            </div>
+                        </div>
+                        <div class="down">
+                            <span class="price"><b>$2,100/</b> Night</span>
+                            <button class="btn">View More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="/images/home2/img4.jpg" alt="...">
+                        <div class="imgTop">
+                            <p class="type">For Sail</p>
+                            <button class="likeBtn">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="top">
+                            <h3>The Most Luxarious House</h3>
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>4059 Waterview Texico, NM 88135</span>
+                            </div>
+                            <div class="info">
+                                <div class="card"><i class="fa-solid fa-bed"></i> <span>20 Bedrooms</span></div>
+                                <div class="card"><i class="fa-solid fa-bath"></i> <span>3 Bathrooms</span></div>
+                            </div>
+                        </div>
+                        <div class="down">
+                            <span class="price"><b>$2,100/</b> Night</span>
+                            <button class="btn">View More</button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="down">
+                <button class="more"><span>View More</span><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="agents" class="section">
+        <div class="agentsContainer container">
+            <h2 class="optionTitle agentsTitle"><span>Growing</span> Agents</h2>
+            <div class="boxes">
+                <div class="box">
+                    <div class="img">
+                        <img src="/images/man1.png" alt="...">
+                        <div class="workTime">
+                            <span>4 Years Experience</span>
+                        </div>
+                    </div>
+                    <h3>David Wing</h3>
+                    <div class="bottom">
+                        <p>Agent</p>
+                        <div class="icons">
+                            <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                            <div class="icon"><i class="fa-brands fa-linkedin"></i></div>
+                            <div class="icon"><i class="fa-brands fa-twitter"></i></div>
+                            <div class="icon"><i class="fa-brands fa-facebook-f"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="/images/man2.png" alt="...">
+                        <div class="workTime">
+                            <span>3 Years Experience</span>
+                        </div>
+                    </div>
+                    <h3>Mike Hue</h3>
+                    <div class="bottom">
+                        <p>Agent</p>
+                        <div class="icons">
+                            <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                            <div class="icon"><i class="fa-brands fa-linkedin"></i></div>
+                            <div class="icon"><i class="fa-brands fa-twitter"></i></div>
+                            <div class="icon"><i class="fa-brands fa-facebook-f"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="img">
+                        <img src="/images/man3.png" alt="...">
+                        <div class="workTime">
+                            <span>5 Years Experience</span>
+                        </div>
+                    </div>
+                    <h3>Ela Steven</h3>
+                    <div class="bottom">
+                        <p>Agent</p>
+                        <div class="icons">
+                            <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                            <div class="icon"><i class="fa-brands fa-linkedin"></i></div>
+                            <div class="icon"><i class="fa-brands fa-twitter"></i></div>
+                            <div class="icon"><i class="fa-brands fa-facebook-f"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="img">
+                        <img src="/images/man4.png" alt="...">
+                        <div class="workTime">
+                            <span>3 Years Experience</span>
+                        </div>
+                    </div>
+                    <h3>Billi Butcher</h3>
+                    <div class="bottom">
+                        <p>Agent</p>
+                        <div class="icons">
+                            <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                            <div class="icon"><i class="fa-brands fa-linkedin"></i></div>
+                            <div class="icon"><i class="fa-brands fa-twitter"></i></div>
+                            <div class="icon"><i class="fa-brands fa-facebook-f"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section offer">
+        <div class="container offerContainer">
+            <h2 class="optionTitle agentsTitle"><span>Featured</span> Properties</h2>
+
+            <div class="slider" data-get="getSlidersParam">
+                <div class="cont sliderContainer" data-value="0">
+                    <div class="cards sl">
+                        <div class="card" id="5">
+                            <div class="img">
+                                <img src="/images/home3/img9.jpg"> 
+                            </div>
+                            <div class="content">
+                                <div class="top">
+                                    <h3 class="name">A Modern House Accentuates</h3>
+                                    <button>For Sale</button>
+                                </div>
+                                <div class="location">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>4059 Waterview Texico, NM 88135</span>
+                                </div>
+                                <div class="cardFooter">
+                                    <div class="stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <p class="price">$111111111</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" id="5">
+                            <div class="img">
+                                <img src="/images/home3/img9.jpg"> 
+                            </div>
+                            <div class="content">
+                                <div class="top">
+                                    <h3 class="name">A Modern House Accentuates</h3>
+                                    <button>For Sale</button>
+                                </div>
+                                <div class="location">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>4059 Waterview Texico, NM 88135</span>
+                                </div>
+                                <div class="cardFooter">
+                                    <div class="stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <p class="price">$111111111</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" id="5">
+                            <div class="img">
+                                <img src="/images/home3/img9.jpg"> 
+                            </div>
+                            <div class="content">
+                                <div class="top">
+                                    <h3 class="name">A Modern House Accentuates</h3>
+                                    <button>For Sale</button>
+                                </div>
+                                <div class="location">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>4059 Waterview Texico, NM 88135</span>
+                                </div>
+                                <div class="cardFooter">
+                                    <div class="stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <p class="price">$111111111</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" id="5">
+                            <div class="img">
+                                <img src="/images/home3/img9.jpg"> 
+                            </div>
+                            <div class="content">
+                                <div class="top">
+                                    <h3 class="name">A Modern House Accentuates</h3>
+                                    <button>For Sale</button>
+                                </div>
+                                <div class="location">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>4059 Waterview Texico, NM 88135</span>
+                                </div>
+                                <div class="cardFooter">
+                                    <div class="stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <p class="price">$111111111</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" id="5">
+                            <div class="img">
+                                <img src="/images/home3/img9.jpg"> 
+                            </div>
+                            <div class="content">
+                                <div class="top">
+                                    <h3 class="name">A Modern House Accentuates</h3>
+                                    <button>For Sale</button>
+                                </div>
+                                <div class="location">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>4059 Waterview Texico, NM 88135</span>
+                                </div>
+                                <div class="cardFooter">
+                                    <div class="stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <p class="price">$111111111</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" id="5">
+                            <div class="img">
+                                <img src="/images/home3/img9.jpg"> 
+                            </div>
+                            <div class="content">
+                                <div class="top">
+                                    <h3 class="name">A Modern House Accentuates</h3>
+                                    <button>For Sale</button>
+                                </div>
+                                <div class="location">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>4059 Waterview Texico, NM 88135</span>
+                                </div>
+                                <div class="cardFooter">
+                                    <div class="stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <p class="price">$111111111</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="left lRBtn" disabled><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="right lRBtn"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="subscribe">
+        <div class="container subscribeContainer">
+            <div class="content">
+                <h2>Subscribe to get the latest news for you! </h2>
+                <div class="inputBox">
+                    <input type="email" placeholder="Enter your email...">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+            <img class="img" src="/images/cta-img 1.png" alt="...">
+        </div>
+    </div>
+
+
+    <footer id="footer">
+        <div class="container footerContainer">
+            <div class="box firstBox">
+                <div class="logo">
+                    <img src="/images/logo-black.png" alt="">
+                </div>
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur a odit aut fugit sed consequuntur magni dolores eos qui ratione.</p>
+            
+                <div class="footerIconBox">
+                    <h4 class="footerIconTitle">Follow Us</h4>
+                    <div class="footerIcons">
+                        <div class="icon"><i class="fa-brands fa-facebook-f"></i></div>
+                        <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                        <div class="icon"><i class="fa-brands fa-telegram"></i></div>
+                        <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <h3 class="boxTitle">About Us</h3>
+
+                <ul class="footerLists">
+                    <li class="list"><a href="#">How It Work</a></li>
+                    <li class="list"><a href="#">Customers</a></li>
+                    <li class="list"><a href="#">Our Story</a></li>
+                    <li class="list"><a href="#">Career</a></li>
+                    <li class="list"><a href="#">Contact Us</a></li>
+                    <li class="list"><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3 class="boxTitle">Support & Summary</h3>
+
+                <ul class="footerLists">
+                    <li class="list"><a href="#">Question</a></li>
+                    <li class="list"><a href="#">Helping Center</a></li>
+                    <li class="list"><a href="#">Privacy & Policy</a></li>
+                    <li class="list"><a href="#">Buy or Rent</a></li>
+                    <li class="list"><a href="#">Properties</a></li>
+                    <li class="list"><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+            <div class="box lastBox">
+                <h3 class="boxTitle">Contact Us</h3>
+
+                <ul class="footerLists">
+                    <li class="list">
+                        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="content">
+                            <h5>E-mail</h5>
+                            <p>youremailid@gmail.com</p>
+                        </div>
+                    </li>
+                    <li class="list">
+                        <div class="icon"><i class="fa-solid fa-phone-volume"></i></div>
+                        <div class="content">
+                            <h5>Contact</h5>
+                            <p>(+01) 123 456 7890</p>
+                        </div>
+                    </li>
+                    <li class="list">
+                        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="content">
+                            <h5>Location</h5>
+                            <p>3012 Pine Garden Lane Atlanta, Boulevard, GA 30328</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footerBottom">
+            <div class="container">
+                <span>Created By Web-Desingner Narek | All Reghts Reserved. <i class="fa-solid fa-heart"></i></span>
+                <span>Term Condition & Policy</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/scripts/nav.js" defer></script>
+    <script src="/scripts/home.js" defer></script>
+    <script src="/scripts/sliderCards.js" defer></script>
+</body>
+</html>

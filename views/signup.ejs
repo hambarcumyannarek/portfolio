@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= page%></title>
+    <link rel="stylesheet" href="/css/registration.css">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="singup regSection">
+        <div class="content">
+            <div class="img">
+                <img src="/images/registration.jpg" alt="...">
+            </div>
+            <h2>Find Your Perfect Place With Homeey</h2>
+        </div>
+        <div class="formParent">
+            <% if (page === 'signup') { %>
+            <form action="/registration/signup" method="post" autocomplete="off">
+                <input type="hidden" name="_csrf" value="<%= csrfToken%>">
+                <div class="top">
+                    <div class="logo"><img src="/images/smalllogo.png" alt="..."></div>
+                    <h3 class="title">Welcome to Homeey</h3>
+                    <p>Welcome! can you make your account in "Homeey" real-estate web-site</p>
+                </div>
+
+                <div class="inputs">
+                    <div class="inputBox">
+                        <label>First name</label>
+                        <div class="input">
+                            <input type="text" name="name" title="User" placeholder="Enter your name..." required>
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <label>Email Address</label>
+                        <div class="input">
+                            <input type="email" name="email" title="user123@gmail.com" placeholder="Enter your email..." required>
+                            <i class="fa-solid fa-at"></i>
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <label>Password</label>
+                        <div class="input password">
+                            <input type="password" name="password" title="password" placeholder="• • • • • • •" required>
+                            <i class="fa-regular fa-eye-slash"></i>
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <label>Confirm password</label>
+                        <div class="input password">
+                            <input type="password" name="confirmPassword" title="password" placeholder="• • • • • • •"required>
+                            <i class="fa-regular fa-eye-slash"></i>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn" type="submit">SIGNUP</button>
+                <p>Have an account <a href="/registration/signin">login</a></p>
+            </form>
+            <% } else if(page === 'signin') { %>
+                <form action="/registration/signin" method="post" autocomplete="off">
+                <input type="hidden" name="_csrf" value="<%= csrfToken%>">
+                <div class="top">
+                    <div class="logo"><img src="/images/smalllogo.png" alt="..."></div>
+                    <h3 class="title">Welcome to Homeey</h3>
+                    <p>Welcome back! login with your data that you entered during registration.</p>
+                </div>
+                <div class="inputs">
+                    <div class="inputBox">
+                        <label>Email Address</label>
+                        <div class="input">
+                            <input type="email" name="email" title="user123@gmail.com" placeholder="Enter your email..." required>
+                            <i class="fa-solid fa-at"></i>
+                        </div>
+                    </div>
+                    <div class="inputBox">
+                        <label>Password</label>
+                        <div class="input password">
+                            <input type="password" name="password" title="password" placeholder="• • • • • • •" required>
+                            <i class="fa-regular fa-eye-slash"></i>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn" type="submit">LOGIN</button>
+                <p>Have not an account <a href="/registration/signup">singup</a></p>
+            </form>
+            <% } %>
+        </div>
+    </div>
+
+    <script src="/scripts/registration.js" defer></script>
+</body>
+</html>

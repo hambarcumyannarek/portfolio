@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  outline: none;
+  border: none;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --black: #2A323C;
+  --blue: #1252AE;
+  --white: #fff;
+  --grey: #F4F6F8;
+  --light-black: #737D8C;
+  --allMode-black: #2A323C;
+  --light-blue: #1252ae33;
+  --allMode-white: #fff;
+  --text-shadow: 2px 3px 4px rgba(10, 25, 48, 0.28);
+  --box-shadow: 0px 6px 7px 0px rgba(18, 82, 174, 0.20);
+  --box-shadow-hover: 0 0 15px 4px rgba(18, 82, 174, 0.3);
+  --black-box-shadow: 0 0 5px rgba(0,0,0,.2);
+  --black-box-shadow-hover: 0 0 10px rgba(0,0,0,.4);
+}
+
+body.darkMode {
+  --white: #0E1420;
+  --black: #fff;
+  --grey: #1A2231;
+  --light-blue: rgba(18, 82, 174, 0.20);
+  --box-shadow: 0px 2px 2px 0px rgba(217, 222, 232, 0.18);
+  --box-shadow-hover: 0px 2px 3px 0px rgba(217, 222, 232, 0.2);
+  --black-box-shadow: 0 0 5px rgba(255,255,255,.2);
+  --black-box-shadow-hover: 0 0 10px rgba(255,255,255,.4);
+  background: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-blue);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 25px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(10, 60, 129);
+}
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.container {
+  max-width: 1320px;
+  width: 100%;
+  display: flex;
+}
+
+.optionTitle {
+  color: var(--black);
+  font-size: 36px;
+}
+.optionTitle span {
+  color: var(--blue);
+}
+
+@media screen and (max-width: 1150px) {
+  .container {
+    max-width: 900px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container {
+    max-width: 700px;
+  }
+}
+.regSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  min-height: 100vh;
+}
+.regSection .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  gap: 30px;
+  background-image: url("../images/overlay-shape-img.png");
+  background-size: cover;
+  background-color: var(--blue);
+  background-position: center;
+}
+.regSection .content .img {
+  max-width: 400px;
+  width: 100%;
+  max-height: 500px;
+  height: 100%;
+  border-radius: 50px 50px 10px 50px;
+  box-shadow: 0px 6px 16px 0px rgba(8, 21, 39, 0.3);
+}
+.regSection .content .img img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  border-radius: 50px 50px 10px 50px;
+}
+.regSection .content h2 {
+  max-width: 450px;
+  color: #FFF;
+  text-align: center;
+  text-shadow: 2px 4px 5px rgba(5, 17, 34, 0.3);
+  font-size: 2.5em;
+  font-weight: normal;
+}
+.regSection .formParent {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.regSection .formParent form {
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.regSection .formParent form .top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+}
+.regSection .formParent form .top .logo {
+  width: 100px;
+  height: 100px;
+  padding: 30px;
+  background: var(--light-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.regSection .formParent form .top .logo img {
+  width: 100%;
+  height: 100%;
+}
+.regSection .formParent form .top h3 {
+  font-size: 1.5em;
+  color: var(--black);
+  font-weight: normal;
+}
+.regSection .formParent form .top p {
+  color: var(--light-black);
+}
+.regSection .formParent form .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.regSection .formParent form .inputs .inputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.regSection .formParent form .inputs .inputBox label {
+  font-size: 1em;
+  color: var(--black);
+}
+.regSection .formParent form .inputs .inputBox .input {
+  position: relative;
+}
+.regSection .formParent form .inputs .inputBox .input input {
+  width: 100%;
+  font-size: 1em;
+  border-radius: 4px;
+  padding: 14px 40px 14px 14px;
+  border: 1px solid var(--light-blue);
+  background: transparent;
+  color: var(--black);
+  transition: all 0.5s;
+}
+.regSection .formParent form .inputs .inputBox .input input:focus {
+  border: 1px solid var(--blue);
+}
+.regSection .formParent form .inputs .inputBox .input i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: var(--black);
+  font-size: 1.2em;
+  cursor: pointer;
+  font-weight: normal;
+}
+.regSection .formParent form button {
+  padding: 12px;
+  background: var(--blue);
+  color: var(--allMode-white);
+  cursor: pointer;
+}
+.regSection .formParent form p {
+  text-align: center;
+  color: var(--light-black);
+}
+.regSection .formParent form p a {
+  color: var(--blue);
+}
+
+@media screen and (max-width: 600px) {
+  .regSection {
+    grid-template-columns: 1fr;
+  }
+  .regSection .content {
+    display: none;
+  }
+}/*# sourceMappingURL=registration.css.map */

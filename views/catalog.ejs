@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>catalog</title>
+
+    <link rel="stylesheet" href="/css/catalog.css">
+
+     <!-- Font-Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <%- include('navbar.ejs') %>
+
+    <div id="catalog">
+        <div class="catalogContainer">
+            <div class="aside">
+                <div class="category">
+                    <button class="active"><i class="fa-solid fa-building-circle-arrow-right"></i><span>For Rent</span></button>
+                    <button><i class="fa-solid fa-house-chimney-window"></i><span>For Sale</span></button>
+                </div>
+
+                <div class="location asideBox">
+                    <h3 class="asideTitle">Location</h3>
+                    <select>
+                        <option value="" disabled hidden selected><i class="fa-solid fa-location-dot"></i><span>Location</span></option>
+                        <option value="Artashat">Artashat</option>
+                        <option value="Erevan">Erevan</option>
+                        <option value="Vostan">Vostan</option>
+                        <option value="Paris">Paris</option>
+                        <option value="London">London</option>
+                        <option value="Moscow">Moscow</option>
+                    </select>
+                </div>
+                <div class="property asideBox">
+                    <h3 class="asideTitle">Property type</h3>
+
+                    <div class="lists">
+                        <label class="checkBox">
+                            <input type="checkbox">
+                            <span>House</span>
+                        </label>
+                        <label class="checkBox">
+                            <input type="checkbox">
+                            <span>Apartment</span>
+                        </label>
+                        <label class="checkBox">
+                            <input type="checkbox">
+                            <span>Hotel</span>
+                        </label>
+                        <label class="checkBox">
+                            <input type="checkbox">
+                            <span>Room</span>
+                        </label>
+                        <label class="checkBox">
+                            <input type="checkbox">
+                            <span>Warehouse</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="price asideBox">
+                    <h3 class="asideTitle">Price per month</h3>
+
+                    <div class="priceInputs">
+                        <div class="inputBox">
+                            <input type="text" value="$" disabled>
+                            <input type="number" value="9000" step="500">
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" value="$" disabled>
+                            <input type="number" value="18000" step="500">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rooms asideBox">
+                    <h3 class="asideTitle">Beds & baths</h3>
+
+                        <div class="inputBox">
+                            <p>Bedrooms</p>
+                            <div class="choose">
+                                <button class="btn active">1</button>
+                                <button class="btn">2</button>
+                                <button class="btn">3</button>
+                                <button class="btn">4</button>
+                            </div>
+                        </div> 
+                        <div class="inputBox">
+                            <p>Bathrooms</p>
+                            <div class="choose">
+                                <button class="btn active">1</button>
+                                <button class="btn">2</button>
+                                <button class="btn">3</button>
+                                <button class="btn">4</button>
+                            </div>
+                        </div> 
+                    </div>
+                    <button class="filterButton"><i class="fa-solid fa-arrows-rotate"></i><span>Reset filters</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <%- include('footer.ejs') %>
+
+    <script src="/scripts/nav.js" defer></script>
+    <script src="/scripts/catalog.js" defer></script>
+</body>
+</html>
