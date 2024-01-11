@@ -37,9 +37,7 @@ body.darkMode {
     --box-shadow-hover: 0px 2px 3px 0px rgba(217, 222, 232, 0.2);
     --black-box-shadow: 0 0 5px rgba(255,255,255,.2);
     --black-box-shadow-hover: 0 0 10px rgba(255,255,255,.4);
-
-    background: var(--white);
-    
+    background: var(--white);   
 }
 ::-webkit-scrollbar {
     width: 13px;
@@ -95,6 +93,13 @@ body.darkMode {
         max-width: 900px;
     }
 }
+
+@media screen and (max-width: 950px) {
+    body {
+        overflow-y: scroll;
+    }
+}
+
 
 @media screen and (max-width: 900px) {
     .container {

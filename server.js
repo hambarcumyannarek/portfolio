@@ -57,6 +57,7 @@ app.get('/profil', Auto, (req, res) => {
 })
 
 app.get('/catalog', Auto, (req, res) => {
+    console.log(req.query);
     res.render('catalog.ejs')
 })
 

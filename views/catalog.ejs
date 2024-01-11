@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,24 +8,361 @@
 
     <link rel="stylesheet" href="/css/catalog.css">
 
-     <!-- Font-Awesome -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
     <%- include('navbar.ejs') %>
 
-    <div id="catalog">
-        <div class="catalogContainer">
-            <div class="aside">
+        <div id="catalog">
+            <div class="catalogContainer">
+                <div class="catalogAside">
+                    <div class="category">
+                        <button data-category="rent" class="active"><i
+                                class="fa-solid fa-building-circle-arrow-right"></i><span>For Rent</span></button>
+                        <button data-category="sale"><i class="fa-solid fa-house-chimney-window"></i><span>For
+                                Sale</span></button>
+                    </div>
+
+                    <div class="location asideBox">
+                        <h3 class="asideTitle">Location</h3>
+                        <select class="locationSelect">
+                            <option value="" disabled hidden selected><i
+                                    class="fa-solid fa-location-dot"></i><span>Location</span></option>
+                            <option value="Artashat">Artashat</option>
+                            <option value="Erevan">Erevan</option>
+                            <option value="Vostan">Vostan</option>
+                            <option value="Paris">Paris</option>
+                            <option value="London">London</option>
+                            <option value="Moscow">Moscow</option>
+                        </select>
+                    </div>
+                    <div class="property asideBox">
+                        <h3 class="asideTitle">Property type</h3>
+
+                        <div class="lists">
+                            <label class="checkBox">
+                                <input type="checkbox" data-property="house">
+                                <span>House</span>
+                            </label>
+                            <label class="checkBox">
+                                <input type="checkbox" data-property="apartment">
+                                <span>Apartment</span>
+                            </label>
+                            <label class="checkBox">
+                                <input type="checkbox" data-property="hotel">
+                                <span>Hotel</span>
+                            </label>
+                            <label class="checkBox">
+                                <input type="checkbox" data-property="room">
+                                <span>Room</span>
+                            </label>
+                            <label class="checkBox">
+                                <input type="checkbox" data-property="warehouse">
+                                <span>Warehouse</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="price asideBox">
+                        <h3 class="asideTitle">Price per month</h3>
+
+                        <div class="priceInputs">
+                            <div class="inputBox">
+                                <input type="text" value="$" disabled>
+                                <input class="minPrice" type="number" value="9000" step="500">
+                            </div>
+                            <div class="inputBox">
+                                <input type="text" value="$" disabled>
+                                <input class="maxPrice" type="number" value="18000" step="500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rooms asideBox">
+                        <h3 class="asideTitle">Beds & baths</h3>
+
+                        <div class="inputBox">
+                            <p>Bedrooms</p>
+                            <div class="choose chooseBed">
+                                <button data-count="1" class="btn active">1</button>
+                                <button data-count="2" class="btn">2</button>
+                                <button data-count="3" class="btn">3</button>
+                                <button data-count="4" class="btn">4</button>
+                            </div>
+                        </div>
+                        <div class="inputBox">
+                            <p>Bathrooms</p>
+                            <div class="choose chooseBath">
+                                <button data-count="1" class="btn active">1</button>
+                                <button data-count="2" class="btn">2</button>
+                                <button data-count="3" class="btn">3</button>
+                                <button data-count="4" class="btn">4</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="filterButton"><i class="fa-solid fa-arrows-rotate"></i><span>Reset filters</span></button>
+                </div>
+
+                <div class="main">
+                    <h2 class="optionTitle">Property for <span>rent</span></h2>
+
+                    <div class="boxes">
+                        <div class="box">
+                            <div class="img">
+                                <img src="/images/home4/img1.jpg" alt="...">
+                                <div class="imgTop">
+                                    <p class="type">For Sail</p>
+                                    <button class="likeBtn">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="top">
+                                    <h3>The Most Luxarious House</h3>
+                                    <div class="location">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>4059 Waterview Texico, NM 88135</span>
+                                    </div>
+                                    <div class="info">
+                                        <div class="card"><i class="fa-solid fa-bed"></i> <span>20 Bedrooms</span></div>
+                                        <div class="card"><i class="fa-solid fa-bath"></i> <span>3 Bathrooms</span></div>
+                                    </div>
+                                </div>
+                                <div class="down">
+                                    <span class="price"><b>$2,100/</b> Night</span>
+                                    <button class="btn">View More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="img">
+                                <img src="/images/home3/img1.jpg" alt="...">
+                                <div class="imgTop">
+                                    <p class="type">For Sail</p>
+                                    <button class="likeBtn">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="top">
+                                    <h3>The Most Luxarious House</h3>
+                                    <div class="location">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>4059 Waterview Texico, NM 88135</span>
+                                    </div>
+                                    <div class="info">
+                                        <div class="card"><i class="fa-solid fa-bed"></i> <span>20 Bedrooms</span></div>
+                                        <div class="card"><i class="fa-solid fa-bath"></i> <span>3 Bathrooms</span></div>
+                                    </div>
+                                </div>
+                                <div class="down">
+                                    <span class="price"><b>$2,100/</b> Night</span>
+                                    <button class="btn">View More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="img">
+                                <img src="/images/home2/img1.jpg" alt="...">
+                                <div class="imgTop">
+                                    <p class="type">For Sail</p>
+                                    <button class="likeBtn">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="top">
+                                    <h3>The Most Luxarious House</h3>
+                                    <div class="location">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>4059 Waterview Texico, NM 88135</span>
+                                    </div>
+                                    <div class="info">
+                                        <div class="card"><i class="fa-solid fa-bed"></i> <span>20 Bedrooms</span></div>
+                                        <div class="card"><i class="fa-solid fa-bath"></i> <span>3 Bathrooms</span></div>
+                                    </div>
+                                </div>
+                                <div class="down">
+                                    <span class="price"><b>$2,100/</b> Night</span>
+                                    <button class="btn">View More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="img">
+                                <img src="/images/home1/img1.jpg" alt="...">
+                                <div class="imgTop">
+                                    <p class="type">For Sail</p>
+                                    <button class="likeBtn">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="top">
+                                    <h3>The Most Luxarious House</h3>
+                                    <div class="location">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>4059 Waterview Texico, NM 88135</span>
+                                    </div>
+                                    <div class="info">
+                                        <div class="card"><i class="fa-solid fa-bed"></i> <span>20 Bedrooms</span></div>
+                                        <div class="card"><i class="fa-solid fa-bath"></i> <span>3 Bathrooms</span></div>
+                                    </div>
+                                </div>
+                                <div class="down">
+                                    <span class="price"><b>$2,100/</b> Night</span>
+                                    <button class="btn">View More</button>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="box">
+                            <div class="img">
+                                <img src="/images/home4/img2.jpg" alt="...">
+                                <div class="imgTop">
+                                    <p class="type">For Sail</p>
+                                    <button class="likeBtn">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="top">
+                                    <h3>The Most Luxarious House</h3>
+                                    <div class="location">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>4059 Waterview Texico, NM 88135</span>
+                                    </div>
+                                    <div class="info">
+                                        <div class="card"><i class="fa-solid fa-bed"></i> <span>20 Bedrooms</span></div>
+                                        <div class="card"><i class="fa-solid fa-bath"></i> <span>3 Bathrooms</span></div>
+                                    </div>
+                                </div>
+                                <div class="down">
+                                    <span class="price"><b>$2,100/</b> Night</span>
+                                    <button class="btn">View More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="img">
+                                <img src="/images/home2/img3.jpg" alt="...">
+                                <div class="imgTop">
+                                    <p class="type">For Sail</p>
+                                    <button class="likeBtn">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="top">
+                                    <h3>The Most Luxarious House</h3>
+                                    <div class="location">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>4059 Waterview Texico, NM 88135</span>
+                                    </div>
+                                    <div class="info">
+                                        <div class="card"><i class="fa-solid fa-bed"></i> <span>20 Bedrooms</span></div>
+                                        <div class="card"><i class="fa-solid fa-bath"></i> <span>3 Bathrooms</span></div>
+                                    </div>
+                                </div>
+                                <div class="down">
+                                    <span class="price"><b>$2,100/</b> Night</span>
+                                    <button class="btn">View More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="img">
+                                <img src="/images/home1/img5.jpg" alt="...">
+                                <div class="imgTop">
+                                    <p class="type">For Sail</p>
+                                    <button class="likeBtn">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="top">
+                                    <h3>The Most Luxarious House</h3>
+                                    <div class="location">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>4059 Waterview Texico, NM 88135</span>
+                                    </div>
+                                    <div class="info">
+                                        <div class="card"><i class="fa-solid fa-bed"></i> <span>20 Bedrooms</span></div>
+                                        <div class="card"><i class="fa-solid fa-bath"></i> <span>3 Bathrooms</span></div>
+                                    </div>
+                                </div>
+                                <div class="down">
+                                    <span class="price"><b>$2,100/</b> Night</span>
+                                    <button class="btn">View More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="img">
+                                <img src="/images/home2/img4.jpg" alt="...">
+                                <div class="imgTop">
+                                    <p class="type">For Sail</p>
+                                    <button class="likeBtn">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="top">
+                                    <h3>The Most Luxarious House</h3>
+                                    <div class="location">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>4059 Waterview Texico, NM 88135</span>
+                                    </div>
+                                    <div class="info">
+                                        <div class="card"><i class="fa-solid fa-bed"></i> <span>20 Bedrooms</span></div>
+                                        <div class="card"><i class="fa-solid fa-bath"></i> <span>3 Bathrooms</span></div>
+                                    </div>
+                                </div>
+                                <div class="down">
+                                    <span class="price"><b>$2,100/</b> Night</span>
+                                    <button class="btn">View More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+        <button class="respFilterBtn"><i class="fa-solid fa-filter"></i><span>Filters</span></button>
+        
+        
+        <div class="responsiveFilters">
+            <div class="responsiveFiltersAside catalogAside">
+                <div class="top">
+                    <div class="logo">
+                        <img src="/images/logo-black.png" alt="">
+                    </div>
+                    <button class="btn closeBtn"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+    
                 <div class="category">
-                    <button class="active"><i class="fa-solid fa-building-circle-arrow-right"></i><span>For Rent</span></button>
-                    <button><i class="fa-solid fa-house-chimney-window"></i><span>For Sale</span></button>
+                    <button data-category="rent" class="active"><i
+                            class="fa-solid fa-building-circle-arrow-right"></i><span>For Rent</span></button>
+                    <button data-category="sale"><i class="fa-solid fa-house-chimney-window"></i><span>For
+                            Sale</span></button>
                 </div>
 
                 <div class="location asideBox">
                     <h3 class="asideTitle">Location</h3>
-                    <select>
-                        <option value="" disabled hidden selected><i class="fa-solid fa-location-dot"></i><span>Location</span></option>
+                    <select class="locationSelect">
+                        <option value="" disabled hidden selected><i
+                                class="fa-solid fa-location-dot"></i><span>Location</span></option>
                         <option value="Artashat">Artashat</option>
                         <option value="Erevan">Erevan</option>
                         <option value="Vostan">Vostan</option>
@@ -38,23 +376,23 @@
 
                     <div class="lists">
                         <label class="checkBox">
-                            <input type="checkbox">
+                            <input type="checkbox" data-property="house">
                             <span>House</span>
                         </label>
                         <label class="checkBox">
-                            <input type="checkbox">
+                            <input type="checkbox" data-property="apartment">
                             <span>Apartment</span>
                         </label>
                         <label class="checkBox">
-                            <input type="checkbox">
+                            <input type="checkbox" data-property="hotel">
                             <span>Hotel</span>
                         </label>
                         <label class="checkBox">
-                            <input type="checkbox">
+                            <input type="checkbox" data-property="room">
                             <span>Room</span>
                         </label>
                         <label class="checkBox">
-                            <input type="checkbox">
+                            <input type="checkbox" data-property="warehouse">
                             <span>Warehouse</span>
                         </label>
                     </div>
@@ -66,11 +404,11 @@
                     <div class="priceInputs">
                         <div class="inputBox">
                             <input type="text" value="$" disabled>
-                            <input type="number" value="9000" step="500">
+                            <input class="minPrice" type="number" value="9000" step="500">
                         </div>
                         <div class="inputBox">
                             <input type="text" value="$" disabled>
-                            <input type="number" value="18000" step="500">
+                            <input class="maxPrice" type="number" value="18000" step="500">
                         </div>
                     </div>
                 </div>
@@ -78,34 +416,33 @@
                 <div class="rooms asideBox">
                     <h3 class="asideTitle">Beds & baths</h3>
 
-                        <div class="inputBox">
-                            <p>Bedrooms</p>
-                            <div class="choose">
-                                <button class="btn active">1</button>
-                                <button class="btn">2</button>
-                                <button class="btn">3</button>
-                                <button class="btn">4</button>
-                            </div>
-                        </div> 
-                        <div class="inputBox">
-                            <p>Bathrooms</p>
-                            <div class="choose">
-                                <button class="btn active">1</button>
-                                <button class="btn">2</button>
-                                <button class="btn">3</button>
-                                <button class="btn">4</button>
-                            </div>
-                        </div> 
+                    <div class="inputBox">
+                        <p>Bedrooms</p>
+                        <div class="choose chooseBed">
+                            <button data-count="1" class="btn active">1</button>
+                            <button data-count="2" class="btn">2</button>
+                            <button data-count="3" class="btn">3</button>
+                            <button data-count="4" class="btn">4</button>
+                        </div>
                     </div>
-                    <button class="filterButton"><i class="fa-solid fa-arrows-rotate"></i><span>Reset filters</span></button>
+                    <div class="inputBox">
+                        <p>Bathrooms</p>
+                        <div class="choose chooseBath">
+                            <button data-count="1" class="btn active">1</button>
+                            <button data-count="2" class="btn">2</button>
+                            <button data-count="3" class="btn">3</button>
+                            <button data-count="4" class="btn">4</button>
+                        </div>
+                    </div>
                 </div>
+                <button class="filterButton"><i class="fa-solid fa-arrows-rotate"></i><span>Reset filters</span></button>
             </div>
         </div>
-    </div>
-    
-    <%- include('footer.ejs') %>
 
-    <script src="/scripts/nav.js" defer></script>
-    <script src="/scripts/catalog.js" defer></script>
+        <%- include('footer.ejs') %>
+
+            <script src="/scripts/nav.js" defer></script>
+            <script src="/scripts/catalog.js" defer></script>
 </body>
+
 </html>
