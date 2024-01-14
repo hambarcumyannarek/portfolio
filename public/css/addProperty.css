@@ -1,0 +1,1016 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  outline: none;
+  border: none;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --black: #2A323C;
+  --blue: #1252AE;
+  --white: #fff;
+  --grey: #F4F6F8;
+  --light-black: #737D8C;
+  --allMode-black: #2A323C;
+  --light-blue: #1252ae33;
+  --allMode-white: #fff;
+  --text-shadow: 2px 3px 4px rgba(10, 25, 48, 0.28);
+  --box-shadow: 0px 6px 7px 0px rgba(18, 82, 174, 0.20);
+  --box-shadow-hover: 0 0 15px 4px rgba(18, 82, 174, 0.3);
+  --black-box-shadow: 0 0 5px rgba(0,0,0,.2);
+  --black-box-shadow-hover: 0 0 10px rgba(0,0,0,.4);
+}
+
+body.darkMode {
+  --white: #0E1420;
+  --black: #fff;
+  --grey: #1A2231;
+  --light-blue: rgba(18, 82, 174, 0.20);
+  --box-shadow: 0px 2px 2px 0px rgba(217, 222, 232, 0.18);
+  --box-shadow-hover: 0px 2px 3px 0px rgba(217, 222, 232, 0.2);
+  --black-box-shadow: 0 0 5px rgba(255,255,255,.2);
+  --black-box-shadow-hover: 0 0 10px rgba(255,255,255,.4);
+  background: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-blue);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 25px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(10, 60, 129);
+}
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.container {
+  max-width: 1320px;
+  width: 100%;
+  display: flex;
+}
+
+.optionTitle {
+  color: var(--black);
+  font-size: 36px;
+}
+.optionTitle span {
+  color: var(--blue);
+}
+
+@media screen and (max-width: 1150px) {
+  .container {
+    max-width: 900px;
+  }
+}
+@media screen and (min-width: 950px) {
+  body {
+    overflow-y: auto !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container {
+    max-width: 700px;
+  }
+}
+body {
+  overflow-y: hidden;
+}
+
+body.loaded .circutSection {
+  visibility: hidden;
+  opacity: 0;
+}
+
+body.loaded {
+  overflow-y: auto;
+}
+
+.circutSection {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+.circutSection .circutBox {
+  width: 60px;
+  height: 60px;
+  border: 6px solid var(--light-blue);
+  border-block-start-color: var(--blue);
+  border-radius: 50%;
+  animation: londing 0.5s linear infinite;
+}
+@keyframes londing {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+nav {
+  width: 100%;
+  padding: 25px 20px;
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+nav .responsiveMenu {
+  display: none;
+}
+nav.active {
+  animation: 0.6s navScroll forwards;
+}
+@keyframes navScroll {
+  from {
+    top: -100%;
+    box-shadow: 0 0px 0px 0px rgba(18, 82, 174, 0.15);
+  }
+  to {
+    top: 0;
+    box-shadow: 0 5px 15px 2px rgba(18, 82, 174, 0.15);
+  }
+}
+nav .navContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+nav .navContainer .logo {
+  max-width: 135px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav .navContainer .logo img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+nav .navContainer .links {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+nav .navContainer .links .link {
+  position: relative;
+}
+nav .navContainer .links .link::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  width: 0%;
+  background: var(--black);
+  transition: all 0.5s;
+}
+nav .navContainer .links .link:hover .linkText {
+  color: var(--blue);
+}
+nav .navContainer .links .link:hover::before {
+  background: var(--blue);
+  width: 100%;
+  left: 0;
+}
+nav .navContainer .links .link:hover .bgLinkTop i {
+  color: var(--blue);
+}
+nav .navContainer .links .link .linkText {
+  color: var(--black);
+  font-size: 1.1em;
+  font-weight: normal;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+nav .navContainer .links .linkBg {
+  position: relative;
+}
+nav .navContainer .links .linkBg .bgLinkTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+nav .navContainer .links .linkBg .bgLinkTop i {
+  color: var(--black);
+  font-size: 0.8em;
+  transition: all 0.5s;
+}
+nav .navContainer .links .linkBg:hover .bgLinkTop i {
+  transform: rotate(-180deg);
+}
+nav .navContainer .links .linkBg:hover .linksCard {
+  top: calc(100% + 10px);
+  visibility: visible;
+  opacity: 1;
+}
+nav .navContainer .links .linkBg .linksCard {
+  position: absolute;
+  top: 90%;
+  left: 0;
+  padding: 15px;
+  min-width: 190px;
+  width: 100%;
+  background: var(--white);
+  box-shadow: 0 5px 15px 2px rgba(18, 82, 174, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 15px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+nav .navContainer .links .linkBg .linksCard .bgDownLink {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 0;
+  transition: all 0.5s;
+}
+nav .navContainer .links .linkBg .linksCard .bgDownLink span, nav .navContainer .links .linkBg .linksCard .bgDownLink i {
+  font-size: 0.9em;
+  color: var(--black);
+  transition: all 0.5s;
+}
+nav .navContainer .links .linkBg .linksCard .bgDownLink:hover span, nav .navContainer .links .linkBg .linksCard .bgDownLink:hover i {
+  color: var(--blue);
+}
+nav .navContainer .links .linkBg .linksCard .bgDownLink:hover span {
+  transform: translateX(5px);
+}
+nav .navContainer .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+nav .navContainer .icons .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 12px 24px;
+  color: var(--blue);
+  border-radius: 4px;
+  background: var(--light-blue);
+  box-shadow: 0px 2px 3px 0px rgba(18, 82, 174, 0.4);
+  cursor: pointer;
+  flex-wrap: nowrap;
+  font-size: 1em;
+  transition: all 0.5s;
+}
+nav .navContainer .icons .btn span {
+  margin-left: 4px;
+}
+nav .navContainer .icons .btn:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+nav .navContainer .icons .menuBtn {
+  display: none;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch input.active + .switchSlider {
+  background-color: var(--blue);
+}
+.switch input:focus + .switchSlider {
+  box-shadow: 0 0 1px rgba(18, 82, 174, 0.15);
+}
+.switch input.active + .switchSlider:before {
+  transform: translateX(26px);
+}
+.switch .switchSlider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(18, 82, 174, 0.15);
+  transition: 0.4s;
+}
+.switch .switchSlider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--white);
+  transition: 0.4s;
+}
+.switch .switchSlider.round {
+  border-radius: 34px;
+}
+.switch .switchSlider.round:before {
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 1150px) {
+  nav .container .links {
+    gap: 35px;
+  }
+  nav .container .links .link .linkText {
+    font-size: 1em;
+  }
+  nav .container .icons .btn {
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 950px) {
+  nav .container .links {
+    display: none;
+  }
+  nav .container .switchBigNav {
+    display: none;
+  }
+  nav .container .icons {
+    gap: 10px;
+  }
+  nav .container .icons .btn {
+    font-size: 1em;
+    height: 46px;
+  }
+  nav .container .icons .sign {
+    display: none;
+  }
+  nav .container .icons .menuBtn {
+    display: flex;
+    padding: 15px;
+    width: 46px;
+    height: 46px;
+  }
+  nav .responsiveMenu {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(255, 255, 255, 0.01);
+    -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  nav .responsiveMenu.active {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.6s;
+  }
+  nav .responsiveMenu.active .aside {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  nav .responsiveMenu .aside {
+    max-height: 100vh;
+    max-width: 400px;
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 25px 20px;
+    background: var(--white);
+    box-shadow: 0 5px 15px 2px rgba(18, 82, 174, 0.15);
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: 0.5s;
+  }
+  nav .responsiveMenu .aside .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  nav .responsiveMenu .aside .top .logo {
+    max-width: 135px;
+    width: 100%;
+    max-height: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .responsiveMenu .aside .top .logo img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+  nav .responsiveMenu .aside .top .closeBtn {
+    width: 45px;
+    height: 45px;
+    border: 2px solid var(--blue);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.3em;
+    color: var(--blue);
+    background: var(--white);
+    transition: all 0.5s;
+  }
+  nav .responsiveMenu .aside .top .closeBtn:hover {
+    background: var(--blue);
+    color: var(--white);
+  }
+  nav .responsiveMenu .aside .links .link {
+    width: 100%;
+    padding: 16px 0;
+    border-bottom: 2px solid var(--grey);
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+  nav .responsiveMenu .aside .links .link:hover {
+    border-bottom: 2px solid var(--blue);
+  }
+  nav .responsiveMenu .aside .links .link:hover .linkText {
+    color: var(--blue);
+  }
+  nav .responsiveMenu .aside .links .link:hover i {
+    color: var(--blue);
+  }
+  nav .responsiveMenu .aside .links .link .linkText {
+    font-size: 1.1em;
+    color: var(--black);
+  }
+  nav .responsiveMenu .aside .links .link i {
+    font-size: 1.1em;
+    color: var(--black);
+  }
+  nav .responsiveMenu .aside .links .link:last-child {
+    border-bottom: none;
+  }
+  nav .responsiveMenu .aside .links .linkBg.active {
+    border-bottom: 2px solid var(--blue);
+  }
+  nav .responsiveMenu .aside .links .linkBg.active .bgLinkTop .linkText {
+    color: var(--blue);
+  }
+  nav .responsiveMenu .aside .links .linkBg.active .bgLinkTop i {
+    transform: rotate(-180deg);
+    transition: all 0.5s;
+    color: var(--blue);
+  }
+  nav .responsiveMenu .aside .links .linkBg.active .linksCard {
+    max-height: 300px;
+    transition: max-height 0.5s ease-in;
+  }
+  nav .responsiveMenu .aside .links .linkBg .linksCard {
+    position: relative;
+    padding-left: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+  nav .responsiveMenu .aside .links .linkBg .linksCard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--blue);
+  }
+  nav .responsiveMenu .aside .links .linkBg .linksCard .bgDownLink {
+    font-size: 1.1em;
+    color: var(--black);
+    padding: 8px 0;
+    transition: 0.5s;
+  }
+  nav .responsiveMenu .aside .links .linkBg .linksCard .bgDownLink:hover {
+    color: var(--blue);
+  }
+}
+@media screen and (max-width: 450px) {
+  nav .responsiveMenu .aside {
+    max-width: 450px;
+    width: 100%;
+    box-shadow: none;
+  }
+}
+@media screen and (max-width: 420px) {
+  nav .container {
+    gap: 20px;
+  }
+  nav .container .icons {
+    gap: 10px;
+  }
+  nav .container .icons .btn {
+    padding: 10px 15px;
+    font-size: 0.9em;
+    max-height: 40px;
+  }
+  nav .container .icons .menuBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    padding: 10px;
+  }
+}
+#footer {
+  position: relative;
+  padding: 40px 20px 90px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("/images/footer-bg.png"), var(--grey) 50%/cover no-repeat;
+}
+#footer .footerBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: var(--grey);
+  box-shadow: 0 -2px 5px 2px rgba(18, 82, 174, 0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#footer .footerBottom .container {
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#footer .footerBottom .container span {
+  color: var(--light-black);
+}
+#footer .footerBottom .container span i {
+  color: rgb(225, 72, 72);
+}
+#footer .footerContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 30px;
+}
+#footer .footerContainer .firstBox .logo {
+  max-width: 135px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#footer .footerContainer .firstBox .logo img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+#footer .footerContainer .firstBox p {
+  color: var(--light-black);
+  font-size: 14px;
+  line-height: 18px;
+}
+#footer .footerContainer .firstBox .footerIconBox {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+#footer .footerContainer .firstBox .footerIconTitle {
+  color: var(--black);
+  font-size: 18px;
+}
+#footer .footerContainer .firstBox .footerIcons {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+#footer .footerContainer .firstBox .footerIcons .icon {
+  width: 35px;
+  height: 35px;
+  background: var(--light-blue);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#footer .footerContainer .firstBox .footerIcons .icon:hover {
+  background: var(--black);
+}
+#footer .footerContainer .firstBox .footerIcons .icon:hover i {
+  color: var(--white);
+}
+#footer .footerContainer .firstBox .footerIcons .icon i {
+  font-size: 0.9em;
+  color: var(--black);
+  transition: all 0.5s;
+}
+#footer .footerContainer .box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#footer .footerContainer .box h3 {
+  color: var(--black);
+  font-size: 20px;
+  font-weight: 600;
+}
+#footer .footerContainer .box .footerLists {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#footer .footerContainer .box .footerLists .list a {
+  color: var(--light-black);
+  font-size: 15px;
+  transition: all 0.5s;
+}
+#footer .footerContainer .box .footerLists .list a:hover {
+  color: var(--blue);
+}
+#footer .footerContainer .lastBox .footerLists .list {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+#footer .footerContainer .lastBox .footerLists .list .icon {
+  min-width: 35px;
+  min-height: 35px;
+  background: var(--light-blue);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#footer .footerContainer .lastBox .footerLists .list .icon i {
+  font-size: 0.9em;
+  color: var(--blue);
+}
+#footer .footerContainer .lastBox .footerLists .list .content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#footer .footerContainer .lastBox .footerLists .list .content h5 {
+  font-weight: normal;
+  font-size: 1em;
+  color: var(--black);
+}
+#footer .footerContainer .lastBox .footerLists .list .content p {
+  color: var(--light-black);
+  font-size: 0.9em;
+}
+
+#addProperty {
+  padding: 100px 20px;
+  width: 100%;
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+#addProperty .addPropertyContainer {
+  flex-direction: column;
+  gap: 40px;
+}
+#addProperty .addPropertyContainer form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+#addProperty .addPropertyContainer form .bigBox {
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: var(--black-box-shadow);
+  background: var(--grey);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#addProperty .addPropertyContainer form .bigBox .bigBoxTitle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#addProperty .addPropertyContainer form .bigBox .bigBoxTitle i {
+  font-size: 1.4em;
+  color: var(--blue);
+}
+#addProperty .addPropertyContainer form .bigBox .bigBoxTitle h3 {
+  font-size: 1.5em;
+  color: var(--black);
+  font-weight: normal;
+}
+#addProperty .addPropertyContainer form .bigBox .inputs .input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#addProperty .addPropertyContainer form .bigBox .inputs .input h4 {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: var(--black);
+}
+#addProperty .addPropertyContainer form .bigBox .inputs .input h4 span {
+  color: red;
+}
+#addProperty .addPropertyContainer form .bigBox .inputs .input input {
+  font-size: 1.1em;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--black) !important;
+  background: var(--white);
+  color: var(--black);
+  box-shadow: 0 0 5px 2px var(--black-box-shadow);
+  transition: all 0.5s;
+}
+#addProperty .addPropertyContainer form .bigBox .inputs .input input::-moz-placeholder {
+  color: var(--light-black);
+}
+#addProperty .addPropertyContainer form .bigBox .inputs .input input::placeholder {
+  color: var(--light-black);
+}
+#addProperty .addPropertyContainer form .bigBox .inputs .input input:focus {
+  border: 1px solid var(--blue) !important;
+  box-shadow: 0 0 5px 2px rgba(18, 82, 174, 0.4);
+}
+#addProperty .addPropertyContainer form .bigBox .inputs .input select {
+  font-size: 1.1em;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--black);
+  background: var(--white);
+  color: var(--black);
+  box-shadow: 0 0 5px 2px var(--black-box-shadow);
+  transition: all 0.5s;
+}
+#addProperty .addPropertyContainer form .bigBox .inputs .input select:focus {
+  border: 1px solid var(--blue);
+  box-shadow: 0 0 5px 2px rgba(18, 82, 174, 0.4);
+}
+#addProperty .addPropertyContainer form .basicInfo .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+#addProperty .addPropertyContainer form .basicInfo .inputs .inputTop {
+  width: 100%;
+}
+#addProperty .addPropertyContainer form .basicInfo .inputs .inputTop input {
+  width: 100%;
+  font-size: 1.1em;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid;
+}
+#addProperty .addPropertyContainer form .basicInfo .inputs .inputsBottom {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+#addProperty .addPropertyContainer form .locationDate .inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+#addProperty .addPropertyContainer form .locationDate .inputs .inputTop {
+  width: 100%;
+}
+#addProperty .addPropertyContainer form .locationDate .inputs .inputTop input {
+  width: 100%;
+  font-size: 1.1em;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid;
+}
+#addProperty .addPropertyContainer form .locationDate .inputs .inputsBottom {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+#addProperty .addPropertyContainer form .propertyDetails .propertyInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+#addProperty .addPropertyContainer form .propertyDetails .propertyInputs .inputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#addProperty .addPropertyContainer form .propertyDetails .propertyInputs .inputBox.textarea textarea {
+  width: 100%;
+  resize: vertical;
+  height: 150px;
+  font-size: 1.1em;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--black);
+  background: var(--white);
+  color: var(--black);
+  box-shadow: 0 0 5px 2px var(--black-box-shadow);
+  transition: all 0.5s;
+}
+#addProperty .addPropertyContainer form .propertyDetails .propertyInputs .inputBox.textarea textarea:focus {
+  border: 1px solid var(--blue);
+  box-shadow: 0 0 5px 2px rgba(18, 82, 174, 0.4);
+}
+#addProperty .addPropertyContainer form .propertyDetails .propertyInputs .inputBox p {
+  font-size: 1em;
+  color: var(--black);
+  font-weight: bold;
+}
+#addProperty .addPropertyContainer form .propertyDetails .propertyInputs .inputBox .choose {
+  display: flex;
+  flex-wrap: nowrap;
+  border-radius: 5px;
+}
+#addProperty .addPropertyContainer form .propertyDetails .propertyInputs .inputBox .choose .btn {
+  padding: 12px 25px;
+  cursor: pointer;
+  border-right: 1px solid var(--light-black);
+  background: var(--grey);
+  border: 1px solid var(--light-black);
+  border-left: none;
+  text-align: center;
+  color: var(--black);
+  transition: all 0.5s;
+}
+#addProperty .addPropertyContainer form .propertyDetails .propertyInputs .inputBox .choose .btn.active {
+  background: var(--light-blue);
+}
+#addProperty .addPropertyContainer form .propertyDetails .propertyInputs .inputBox .choose .btn:nth-child(2) {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-left: 1px solid var(--light-black);
+}
+#addProperty .addPropertyContainer form .propertyDetails .propertyInputs .inputBox .choose .btn:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+#addProperty .addPropertyContainer form .priceBox .priceBoxInfo {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+#addProperty .addPropertyContainer form .priceBox .priceBoxInfo p {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: var(--black);
+}
+#addProperty .addPropertyContainer form .priceBox .priceBoxInfo p span {
+  color: red;
+}
+#addProperty .addPropertyContainer form .priceBox .priceBoxInfo .inputs {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-gap: 10px;
+}
+#addProperty .addPropertyContainer form .priceBox .priceBoxInfo .inputs input[type=text] {
+  text-align: center;
+}
+#addProperty .addPropertyContainer form .addPhotos .fileLabel {
+  width: 100%;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 3px dotted var(--black);
+}
+#addProperty .addPropertyContainer form .addPhotos .fileLabel .buttonCont {
+  width: 100%;
+  padding: 25px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#addProperty .addPropertyContainer form .addPhotos .fileLabel .buttonCont .button {
+  padding: 15px 30px;
+  font-size: 1.1em;
+  color: var(--white);
+  background: var(--blue);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#addProperty .addPropertyContainer form .addPhotos .fileLabel .buttonCont .button:hover {
+  background: rgb(13, 69, 148);
+}
+#addProperty .addPropertyContainer form .addPhotos .fileLabel .images {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+}
+#addProperty .addPropertyContainer form .addPhotos .fileLabel .images .img {
+  position: relative;
+  max-height: 200px;
+  height: 100%;
+}
+#addProperty .addPropertyContainer form .addPhotos .fileLabel .images .img .top {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#addProperty .addPropertyContainer form .addPhotos .fileLabel .images .img .top .closeImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: var(--black);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#addProperty .addPropertyContainer form .addPhotos .fileLabel .images .img .top .closeImg:hover {
+  border: 2px solid var(--white);
+}
+#addProperty .addPropertyContainer form .addPhotos .fileLabel .images .img .top .closeImg i {
+  font-size: 0.8em;
+  color: var(--white);
+}
+#addProperty .addPropertyContainer form .addPhotos .fileLabel .images .img .top p {
+  color: var(--black);
+}
+#addProperty .addPropertyContainer form .addPhotos .fileLabel .images .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+@media screen and (max-width: 900px) {
+  #addProperty .addPropertyContainer form .addPhotos .fileLabel .images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 550px) {
+  #addProperty .addPropertyContainer form .addPhotos .fileLabel {
+    padding: 20px;
+  }
+  #addProperty .addPropertyContainer form .addPhotos .fileLabel .images {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 450px) {
+  #addProperty .addPropertyContainer form .bigBox .inputs .inputsBottom {
+    grid-template-columns: 1fr;
+  }
+  #addProperty .addPropertyContainer form .priceBox .priceBoxInfo .inputs {
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}/*# sourceMappingURL=addProperty.css.map */

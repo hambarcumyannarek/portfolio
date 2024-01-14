@@ -94,9 +94,9 @@ body.darkMode {
     }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (min-width: 950px) {
     body {
-        overflow-y: scroll;
+        overflow-y: auto !important;
     }
 }
 

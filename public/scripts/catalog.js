@@ -39,7 +39,7 @@ closeBtnF.addEventListener('click', () => {
 });
 
 responsiveFilters.addEventListener('click', (e) => {
-    if(e.target.className.search('responsiveFilters') !== -1) {
+    if (e.target.className.search('responsiveFilters') !== -1) {
         responsiveFilters.classList.remove('active');
         document.body.style.overflowY = 'auto';
         document.body.style.marginRight = '0';
@@ -60,18 +60,25 @@ respFilterBtn.addEventListener('click', () => {
 
 const filterButton = document.querySelectorAll('.catalogAside .filterButton');
 
+const choosedCategoryName = document.querySelector('.category').getAttribute('data-choose-category')
+const chooseCategoryWithName = document.querySelector(`.category [data-category="${choosedCategoryName}"]`);
 
+if (chooseCategoryWithName) {
+    chooseCategoryWithName.classList.add('active');
+}
 function sendDate(catalogAside) {
-    const categoryType = catalogAside.querySelector('.category .active').getAttribute('data-category');
+    const categoryType = catalogAside.querySelector('.category .active') ? catalogAside.querySelector('.category .active').getAttribute('data-category') : '';
     const selectValue = catalogAside.querySelector('.locationSelect').value;
     const checkBox = catalogAside.querySelectorAll('.property .checkBox');
     const property = [];
     const minPrice = catalogAside.querySelector('.price .minPrice').value;
     const maxPrice = catalogAside.querySelector('.price .maxPrice').value;
-    const chooseBed = catalogAside.querySelector('.rooms .chooseBed .active').getAttribute('data-count');
-    const chooseBath = catalogAside.querySelector('.rooms .chooseBath .active').getAttribute('data-count');
+    const chooseBed = catalogAside.querySelector('.rooms .chooseBed .active') ? catalogAside.querySelector('.rooms .chooseBed .active').getAttribute('data-count') : '';
+    const chooseBath = catalogAside.querySelector('.rooms .chooseBath .active') ? catalogAside.querySelector('.rooms .chooseBath .active').getAttribute('data-count') : '';
+    console.log(chooseBed)
+    console.log(chooseBath)
     checkBox.forEach(box => {
-        if(box.querySelector('input').checked === true) {
+        if (box.querySelector('input').checked === true) {
             property.push(box.querySelector('input').getAttribute('data-property'));
         }
     })
@@ -84,4 +91,3 @@ filterButton.forEach(btn => {
         sendDate(btn.parentElement)
     })
 })
-    

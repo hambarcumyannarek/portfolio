@@ -1,0 +1,395 @@
+@import './all';
+@import './navbar';
+@import './footer';
+
+#addProperty {
+    padding: 100px 20px;
+    width: 100%;
+    background: var(--white);
+    @include center();
+    min-height: 100vh;
+
+    .addPropertyContainer {
+        flex-direction: column;
+        gap: 40px;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            .bigBox {
+                padding: 20px;
+                border-radius: 20px;
+                box-shadow: var(--black-box-shadow);
+                background: var(--grey);
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                .bigBoxTitle {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+
+                    i {
+                        font-size: 1.4em;
+                        color: var(--blue);
+                    }
+
+                    h3 {
+                        font-size: 1.5em;
+                        color: var(--black);
+                        font-weight: normal;
+                    }
+                }
+
+                .inputs {
+                    .input {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+
+                        h4 {
+                            font-size: 1.2em;
+                            font-weight: normal;
+                            color: var(--black);
+
+                            span {
+                                color: red;
+                            }
+                        }
+
+                        input {
+                            font-size: 1.1em;
+                            padding: 15px;
+                            border-radius: 5px;
+                            border: 1px solid var(--black) !important;
+                            background: var(--white);
+                            color: var(--black);
+                            box-shadow: 0 0 5px 2px var(--black-box-shadow);
+                            transition: all .5s;
+
+                            &::placeholder {
+                                color: var(--light-black);
+                            }
+
+                            &:focus {
+                                border: 1px solid var(--blue) !important;
+                                box-shadow: 0 0 5px 2px rgba(18, 82, 174, 0.40);
+                            }
+                        }
+
+                        select {
+                            font-size: 1.1em;
+                            padding: 15px;
+                            border-radius: 5px;
+                            border: 1px solid var(--black);
+                            background: var(--white);
+                            color: var(--black);
+                            box-shadow: 0 0 5px 2px var(--black-box-shadow);
+                            transition: all .5s;
+
+                            &:focus {
+                                border: 1px solid var(--blue);
+                                box-shadow: 0 0 5px 2px rgba(18, 82, 174, 0.40);
+                            }
+                        }
+                    }
+                }
+
+            }
+            .basicInfo {
+                .inputs {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 25px;
+                    .inputTop {
+                        width: 100%;
+                        input {
+                            width: 100%;
+                            font-size: 1.1em;
+                            padding: 15px;
+                            border-radius: 5px;
+                            border: 1px solid;
+                        }
+                    }
+
+                    .inputsBottom {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                        grid-gap: 20px;
+                    }
+                }
+            }
+
+            .locationDate {
+                .inputs {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    grid-gap: 20px;
+
+                    .inputTop {
+                        width: 100%;
+                        input {
+                            width: 100%;
+                            font-size: 1.1em;
+                            padding: 15px;
+                            border-radius: 5px;
+                            border: 1px solid;
+                        }
+                    }
+
+                    .inputsBottom {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                        grid-gap: 20px;
+                    }
+                }
+            }
+
+            .propertyDetails {
+                .propertyInputs {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 25px;
+                
+                    .inputBox {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+
+                        &.textarea {
+                            textarea {
+                                width: 100%;
+                                resize: vertical;
+                                height: 150px;
+                                font-size: 1.1em;
+                                padding: 15px;
+                                border-radius: 5px;
+                                border: 1px solid var(--black);
+                                background: var(--white);
+                                color: var(--black);
+                                box-shadow: 0 0 5px 2px var(--black-box-shadow);
+                                transition: all .5s;
+
+                                &:focus {
+                                    border: 1px solid var(--blue);
+                                    box-shadow: 0 0 5px 2px rgba(18, 82, 174, 0.40);
+                                }
+                            }
+                        }
+    
+                        p {
+                            font-size: 1em;
+                            color: var(--black);
+                            font-weight: bold;
+                        }
+    
+                        .choose {
+                            display: flex;
+                            flex-wrap: nowrap;
+                            border-radius: 5px;
+    
+                            .btn {
+                                padding: 12px 25px;
+                                cursor: pointer;
+                                border-right: 1px solid var(--light-black);
+                                background: var(--grey);
+                                border: 1px solid var(--light-black);
+                                border-left: none;
+                                text-align: center;
+                                color: var(--black);
+                                transition: all .5s;
+
+    
+                                &.active {
+                                    background: var(--light-blue);
+                                }
+                            
+                                &:nth-child(2) {
+                                    border-top-left-radius: 5px;
+                                    border-bottom-left-radius: 5px;
+                                    border-left: 1px solid var(--light-black);
+                                }
+                                &:last-child {
+                                    border-top-right-radius: 5px;
+                                    border-bottom-right-radius: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .priceBox {
+                .priceBoxInfo {
+                    display: flex;
+                    gap: 8px;
+                    flex-direction: column;
+
+                    p {
+                        font-size: 1.2em;
+                        font-weight: normal;
+                        color: var(--black);
+
+                        span {
+                            color: red;
+                        }
+                    }
+                    .inputs {
+                        display: grid;
+                        grid-template-columns: 100px 1fr;
+                        grid-gap: 10px;
+
+                        input[type="text"] {
+                            text-align: center;
+                        }
+                    }
+                 }
+            }
+
+            .addPhotos {
+                .fileLabel {
+                    width: 100%;
+                    padding: 25px 20px;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 10px;
+                    border: 3px dotted var(--black);
+
+                    .buttonCont {
+                        width: 100%;
+                        padding: 25px 0; 
+                        @include center();
+
+                        .button {
+                            padding: 15px 30px;
+                            font-size: 1.1em;
+                            color: var(--white);
+                            background: var(--blue);
+                            border-radius: 5px;
+                            cursor: pointer;
+                            transition: all .5s;
+
+                            &:hover {
+                                background: rgb(13, 69, 148);
+                            }
+                        }
+                    }
+
+                    .images {
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        grid-gap: 15px;
+
+                        .img {
+                            position: relative;
+                            max-height: 200px;
+                            height: 100%;
+
+                            .top {
+                                position: absolute;
+                                top: 10px; left: 10px;
+                                display: flex;
+                                align-items: center;
+                                gap: 5px;
+
+                                .closeImg {
+                                    width: 30px;
+                                    height: 30px;
+                                    border-radius: 50%;
+                                    border: 2px solid transparent;
+                                    background: var(--black);
+                                    text-align: center;
+                                    @include center();
+                                    cursor: pointer;
+                                    transition: all .5s;
+
+                                    &:hover {
+                                        border: 2px solid var(--white);
+                                    }
+                                    i {
+                                        font-size: .8em;
+                                        color: var(--white);
+                                    }
+                                }
+
+                                p {
+                                    color: var(--black);
+                                }
+                            }
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 900px) {
+    #addProperty {
+        .addPropertyContainer {
+            form {
+                .addPhotos {
+                    .fileLabel {
+                        .images {
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #addProperty {
+        .addPropertyContainer {
+            form {
+                .addPhotos {
+                    .fileLabel {
+                        padding: 20px;
+                        .images {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #addProperty {
+        .addPropertyContainer {
+            form {
+                .bigBox {
+                    .inputs {
+                        .inputsBottom {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+                }
+
+                .priceBox {
+                    .priceBoxInfo {
+                        .inputs {
+                            width: 100%;
+                            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

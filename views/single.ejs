@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single</title>
+
+    <link rel="stylesheet" href="/css/single.css">
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <%- include('navbar.ejs') %>
+
+        <div id="bigSection" data-product-id="<%= getProductInfo.productId %>" class="section  slider sliderrrr">
+            <div class="container bigSectionContainer">
+                <div class="leftSection">
+                    <div id="slider">
+                        <div class="sliderBox">
+                            <div class="imgBox sliderContainer" data-value="0">
+                                <div class="bigImgContainer">
+                                    <div class="hidden">
+                                        <div class="bigImg">
+                                            <% getProductInfo.images.forEach(img=> { %>
+                                                <img src=/images/upload/<%=img%> alt="...">
+                                                <% }) %>
+                                        </div>
+                                    </div>
+                                    <div class="LFbtns">
+                                        <button class="left LFbtn" disabled><i
+                                                class="fa-solid fa-angle-left left"></i></button>
+                                        <button class="right LFbtn"><i
+                                                class="fa-solid fa-chevron-right right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="smallImages">
+                                    <% getProductInfo.images.forEach(img=> { %>
+                                        <img src=/images/upload/<%=img %> alt="...">
+                                        <% }) %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <h2>
+                            <%= getProductInfo.productName %>
+                        </h2>
+                        <p>In<%= getProductInfo.location %> city <%= getProductInfo.homeAddress %>
+                        </p>
+                        <div class="icons">
+                            <div class="icon">
+                                <i class="fa-solid fa-bed"></i>
+                                <span>
+                                    <%= getProductInfo.bedRooms %>
+                                </span>
+                            </div>
+                            <div class="icon">
+                                <i class="fa-solid fa-bath"></i>
+                                <span>
+                                    <%= getProductInfo.bathRooms %>
+                                </span>
+                            </div>
+                            <div class="icon">
+                                <i class="fa-solid fa-car"></i>
+                                <span>
+                                    <%= getProductInfo.parkingPlace %>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="overflow">
+                            <h3>Overflow</h3>
+                            <p>
+                                <%= getProductInfo.description %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightSection">
+                    <div class="ownerProperty box">
+                        <% if(thisMy) { %>
+                            <h3 style="text-align: center;">This is a my product</h3>
+                            <div class="buttons">
+                                <form action="/addProperty/<%= getProductInfo.productId %>?_method=DELETE" method="post">
+                                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                    <button class="MyBtn delete" type="submit">Delete</button>
+                                </form>
+                                <a href="/addProperty?method=put&productId=<%= getProductInfo.productId %>"><button class="MyBtn update">Update</button></a>
+                            </div>
+                            <% } else { %>
+                                <div class="ownerTopInfo">
+                                    <div class="profilPhoto">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <div class="icons">
+                                        <div class="icon"><i class="fa-brands fa-facebook-f"></i></div>
+                                        <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                                    </div>
+                                </div>
+                                <h3>
+                                    <%= getProductInfo.userName %>
+                                </h3>
+                                <p><i class="fa-regular fa-envelope"></i>
+                                    <%= getProductInfo.userEmail %>
+                                </p>
+                                <% } %>
+                    </div>
+
+                    <h3 class="price">$<%= getProductInfo.price %><span>/month</span></h3>
+
+                    <div class="propertyDetails box">
+                        <h3>Property Details</h3>
+
+                        <ul class="lists">
+                            <li><b>Type:</b>
+                                <%= getProductInfo.property %>
+                            </li>
+                            <li><b>Property:</b> for <%= getProductInfo.category %>
+                            </li>
+                            <li><b>Bedrooms:</b>
+                                <%= getProductInfo.bedRooms %>
+                            </li>
+                            <li><b>Bathrooms:</b>
+                                <%= getProductInfo.bathRooms %>
+                            </li>
+                            <li><b>Parking places:</b>
+                                <%= getProductInfo.parkingPlace %>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="publishedDate">
+                        <p>Published: <b>
+                                <%= getProductInfo.date %>
+                            </b></p>
+                        <p>Ad number: <b>
+                                <%= getProductInfo.productId %>
+                            </b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('footer.ejs') %>
+
+            <script src="/scripts/nav.js"></script>
+            <script src="/scripts/sliderBig.js"></script>
+</body>
+
+</html>

@@ -69,9 +69,9 @@ router.post('/signin', async (req, res, next) => {
         })
         if (checkPassword) {
             const sign = JWT.sign({
+                id: findUser[0].id,
                 name: findUser[0].name,
                 email: findUser[0].email,
-                password: findUser[0].password,
             }, process.env.JWT_SECRET);
             res.cookie('JWT_SIGN', sign);
             return res.redirect('/');
