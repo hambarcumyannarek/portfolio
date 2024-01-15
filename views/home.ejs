@@ -10,94 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <nav id="navbar">
-        <div class="navContainer container">
-            <div class="logo">
-                <img src="/images/logo-black.png" alt="">
-            </div>
-            <ul class="links">
-                <li class="link"><a class="linkText" href="#">Home</a></li>
-                <li class="link linkBg">
-                    <div class="bgLinkTop">
-                        <span class="linkText">Property</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <ul class="linksCard">
-                        <a href="#"><li class="bgDownLink"><i class="fa-solid fa-arrow-right"></i><span>Property for Sale</span></li></a>
-                        <a href="#"><li class="bgDownLink"><i class="fa-solid fa-arrow-right"></i><span>Property for Rent</span></li></a>
-                    </ul>
-                </li>
-                <li class="link linkBg">
-                    <div class="bgLinkTop">
-                        <span class="linkText">Account</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <ul class="linksCard">
-                        <a href="#"><li class="bgDownLink"><i class="fa-solid fa-arrow-right"></i><span>Personal Info</span></li></a>
-                        <a href="#"><li class="bgDownLink"><i class="fa-solid fa-arrow-right"></i><span>Password & Security</span></li></a>
-                        <a href="#"><li class="bgDownLink"><i class="fa-solid fa-arrow-right"></i><span>My Properties</span></li></a>
-                        <a href="#"><li class="bgDownLink"><i class="fa-solid fa-arrow-right"></i><span>Wishes</span></li></a>
-                        <a href="#"><li class="bgDownLink"><i class="fa-solid fa-arrow-right"></i><span>Reviews</span></li></a>
-                    </ul>
-                </li>
-                <li class="link"><a class="linkText" href="#">Sign In</a></li>
-                <li class="link"><a class="linkText" href="#">Sign Up</a></li>
-            </ul>
-            <div class="icons">
-                <label class="switch switchBigNav">
-                    <input class="darkBtn" type="checkbox">
-                    <span class="switchSlider round"></span>
-                  </label>
-                <button class="btn menuBtn"><i class="fa-solid fa-bars"></i></button>
-                <a href="/property"><button class="btn"><i class="fa-solid fa-plus"></i><span>Addproperty</span></button></a>
-            </div>
-        </div>
-
-        <div class="responsiveMenu">
-            <div class="aside">
-                <div class="top">
-                    <div class="logo">
-                        <img src="/images/logo-black.png" alt="">
-                    </div>
-                    <button class="btn closeBtn"><i class="fa-solid fa-xmark"></i></button>
-                </div>
-
-                <ul class="links">
-                    <li class="link"><a class="linkText" href="#">Home</a></li>
-                    <li class="link linkBg">
-                        <div class="bgLinkTop">
-                            <span class="linkText">Property</span>
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </div>
-                        <ul class="linksCard">
-                            <a href="#"><li class="bgDownLink">Property for Sale</li></a>
-                            <a href="#"><li class="bgDownLink">Property for Rent</li></a>
-                        </ul>
-                    </li>
-                    <li class="link linkBg">
-                        <div class="bgLinkTop">
-                            <span class="linkText">Account</span>
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </div>
-                        <ul class="linksCard">
-                            <a href="#"><li class="bgDownLink">Personal Info</li></a>
-                            <a href="#"><li class="bgDownLink">Password & Security</li></a>
-                            <a href="#"><li class="bgDownLink">My Properties</li></a>
-                            <a href="#"><li class="bgDownLink">Wishes</li></a>
-                            <a href="#"><li class="bgDownLink">Reviews</li></a>
-                        </ul>
-                    </li>
-                    <li class="link"><a class="linkText" href="#">Sign In</a></li>
-                    <li class="link"><a class="linkText" href="#">Sign Up</a></li>
-                </ul>
-
-                <label class="switch switchRespNav">
-                    <input class="darkBtn" type="checkbox">
-                    <span class="switchSlider round"></span>
-                </label>
-            </div>
-        </div>
-    </nav>
+    <%- include('navbar.ejs') %>
 
     <div class="circutSection">
         <div class="circutBox"></div>
@@ -111,11 +24,11 @@
                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernat odit aut fugit, sed quia consequuntur magni dolores qui ratione sequi nesciunt.</p>
                 <div class="bigSearch">
                     <div class="buttons">
-                        <button class="btn sale active">Sale</button>
-                        <button class="btn rent">Rent</button>
+                        <button data-category="sale" class="btn sale active">Sale</button>
+                        <button data-category="rent" class="btn rent">Rent</button>
                     </div>
                     <div class="searchCont">
-                        <select>
+                        <select class="linkSelect" name="location">
                             <option value="" disabled hidden selected><i class="fa-solid fa-location-dot"></i><span>Location</span></option>
                             <option value="Artashat">Artashat</option>
                             <option value="Erevan">Erevan</option>
@@ -124,7 +37,7 @@
                             <option value="London">London</option>
                             <option value="Moscow">Moscow</option>
                         </select>
-                        <select>
+                        <select class="linkSelect" name="property">
                             <option value="" disabled hidden selected><i class="fa-solid fa-house"></i><span>Property</span></option>
                             <option value="House">Private House</option>
                             <option value="Appartment">Appartment</option>
@@ -133,7 +46,7 @@
                             <option value="Werehouse">Werehouse</option>
                             <option value="Room">Private Room</option>
                         </select>
-                        <select name="" id="">
+                        <select class="linkSelect" name="price">
                             <option value="" disabled hidden selected><i class="fa-solid fa-dollar-sign"></i><span>Price</span></option>
                             <option value="100-1000">$100-1000</option>
                             <option value="1000-10000">$1000-10000</option>
@@ -141,7 +54,7 @@
                             <option value="100000-1000000">$100000-1000000</option>
                             <option value="1000000-5000000">$1000000-5000000</option>
                         </select>
-                        <button>Search</button>
+                        <a href="/catalog" id="searchBtn"><button>Search</button></a>
                     </div>
                 </div>
             </div>
@@ -288,7 +201,7 @@
                         <img src="/images/home4/img1.jpg" alt="...">
                         <div class="imgTop">
                             <p class="type">For Sail</p>
-                            <button class="likeBtn">
+                            <button class="likeBtn wishlistBtn">
                                 <i class="fa-solid fa-heart"></i>
                             </button>
                         </div>
@@ -316,7 +229,7 @@
                         <img src="/images/home3/img1.jpg" alt="...">
                         <div class="imgTop">
                             <p class="type">For Sail</p>
-                            <button class="likeBtn">
+                            <button class="likeBtn wishlistBtn">
                                 <i class="fa-solid fa-heart"></i>
                             </button>
                         </div>
@@ -344,7 +257,7 @@
                         <img src="/images/home2/img1.jpg" alt="...">
                         <div class="imgTop">
                             <p class="type">For Sail</p>
-                            <button class="likeBtn">
+                            <button class="likeBtn wishlistBtn">
                                 <i class="fa-solid fa-heart"></i>
                             </button>
                         </div>
@@ -372,7 +285,7 @@
                         <img src="/images/home1/img1.jpg" alt="...">
                         <div class="imgTop">
                             <p class="type">For Sail</p>
-                            <button class="likeBtn">
+                            <button class="likeBtn wishlistBtn">
                                 <i class="fa-solid fa-heart"></i>
                             </button>
                         </div>
@@ -401,7 +314,7 @@
                         <img src="/images/home4/img2.jpg" alt="...">
                         <div class="imgTop">
                             <p class="type">For Sail</p>
-                            <button class="likeBtn">
+                            <button class="likeBtn wishlistBtn">
                                 <i class="fa-solid fa-heart"></i>
                             </button>
                         </div>
@@ -429,7 +342,7 @@
                         <img src="/images/home2/img3.jpg" alt="...">
                         <div class="imgTop">
                             <p class="type">For Sail</p>
-                            <button class="likeBtn">
+                            <button class="likeBtn wishlistBtn">
                                 <i class="fa-solid fa-heart"></i>
                             </button>
                         </div>
@@ -457,7 +370,7 @@
                         <img src="/images/home1/img5.jpg" alt="...">
                         <div class="imgTop">
                             <p class="type">For Sail</p>
-                            <button class="likeBtn">
+                            <button class="likeBtn wishlistBtn">
                                 <i class="fa-solid fa-heart"></i>
                             </button>
                         </div>
@@ -485,7 +398,7 @@
                         <img src="/images/home2/img4.jpg" alt="...">
                         <div class="imgTop">
                             <p class="type">For Sail</p>
-                            <button class="likeBtn">
+                            <button class="likeBtn wishlistBtn">
                                 <i class="fa-solid fa-heart"></i>
                             </button>
                         </div>
@@ -778,88 +691,12 @@
     </div>
 
 
-    <footer id="footer">
-        <div class="container footerContainer">
-            <div class="box firstBox">
-                <div class="logo">
-                    <img src="/images/logo-black.png" alt="">
-                </div>
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur a odit aut fugit sed consequuntur magni dolores eos qui ratione.</p>
-            
-                <div class="footerIconBox">
-                    <h4 class="footerIconTitle">Follow Us</h4>
-                    <div class="footerIcons">
-                        <div class="icon"><i class="fa-brands fa-facebook-f"></i></div>
-                        <div class="icon"><i class="fa-brands fa-instagram"></i></div>
-                        <div class="icon"><i class="fa-brands fa-telegram"></i></div>
-                        <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
-                    </div>
-                </div>
-            </div>
-            <div class="box">
-                <h3 class="boxTitle">About Us</h3>
+    <%- include('footer.ejs') %>
 
-                <ul class="footerLists">
-                    <li class="list"><a href="#">How It Work</a></li>
-                    <li class="list"><a href="#">Customers</a></li>
-                    <li class="list"><a href="#">Our Story</a></li>
-                    <li class="list"><a href="#">Career</a></li>
-                    <li class="list"><a href="#">Contact Us</a></li>
-                    <li class="list"><a href="#">FAQs</a></li>
-                </ul>
-            </div>
-            <div class="box">
-                <h3 class="boxTitle">Support & Summary</h3>
-
-                <ul class="footerLists">
-                    <li class="list"><a href="#">Question</a></li>
-                    <li class="list"><a href="#">Helping Center</a></li>
-                    <li class="list"><a href="#">Privacy & Policy</a></li>
-                    <li class="list"><a href="#">Buy or Rent</a></li>
-                    <li class="list"><a href="#">Properties</a></li>
-                    <li class="list"><a href="#">Blogs</a></li>
-                </ul>
-            </div>
-            <div class="box lastBox">
-                <h3 class="boxTitle">Contact Us</h3>
-
-                <ul class="footerLists">
-                    <li class="list">
-                        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
-                        <div class="content">
-                            <h5>E-mail</h5>
-                            <p>youremailid@gmail.com</p>
-                        </div>
-                    </li>
-                    <li class="list">
-                        <div class="icon"><i class="fa-solid fa-phone-volume"></i></div>
-                        <div class="content">
-                            <h5>Contact</h5>
-                            <p>(+01) 123 456 7890</p>
-                        </div>
-                    </li>
-                    <li class="list">
-                        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                        <div class="content">
-                            <h5>Location</h5>
-                            <p>3012 Pine Garden Lane Atlanta, Boulevard, GA 30328</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="footerBottom">
-            <div class="container">
-                <span>Created By Web-Desingner Narek | All Reghts Reserved. <i class="fa-solid fa-heart"></i></span>
-                <span>Term Condition & Policy</span>
-            </div>
-        </div>
-    </footer>
 
     <script src="/scripts/nav.js" defer></script>
     <script src="/scripts/home.js" defer></script>
     <script src="/scripts/sliderCards.js" defer></script>
+    <script src="/scripts/addWishlist.js" defer></script>
 </body>
 </html>

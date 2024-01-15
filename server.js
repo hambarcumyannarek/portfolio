@@ -12,10 +12,11 @@ const methodOverride = require('method-override');
 
 const Registration = require('./routers/registration');
 const Auto = require('./Auto/enterAuto');
-const exitAuto = require('./Auto/exitAuto');
-const addProperty = require('./routers/addProperty');
-const single = require('./routers/single');
+const ExitAuto = require('./Auto/exitAuto');
+const AddProperty = require('./routers/addProperty');
+const Single = require('./routers/single');
 const Catalog = require('./routers/catalog');
+const Wishlist = require('./routers/wishlist');
 // ===== Files Requires End ===== //
 
 const app = express();
@@ -40,16 +41,13 @@ app.set('views-engine', 'ejs')
         next();
     })
     .use(async (req, res, next) => {
-        console.log(req.method)
-        console.log(req.path)
-        if (req.method === 'GET' || req.path === '/addProperty' && req.method === 'POST' || req.path === '/addProperty' && req.method === 'PUT') {
-            return next();
-        }
-        console.log('ssss')
         const { _csrf } = req.body;
-        console.log(_csrf);
-        console.log(req.cookies.csrfToken)
-        if (_csrf === req.cookies.csrfToken) {
+        console.log(req.path)
+        console.log(req.method)
+        if (req.method === 'GET' || req.path === '/addProperty' && req.method === 'POST' || req.path === '/addProperty' && req.method === 'PUT' || req.path === '/catalog' && req.method === 'POST' || req.path === '/wishlist' && req.method === 'POST' || req.path === '/wishlist' && req.method === 'DELETE') {
+            console.log('auto');
+            return next();
+        }else if (_csrf === req.cookies.csrfToken) {
             console.log({
                 html: _csrf,
                 cookie: req.cookies.csrfToken
@@ -71,9 +69,11 @@ app.get('/profil', Auto, (req, res) => {
 
 app.use('/catalog', Auto, Catalog)
 
-app.use('/addProperty', Auto, addProperty);
+app.use('/addProperty', Auto, AddProperty);
 
-app.use('/single', single);
+app.use('/single', Single);
+
+app.use('/wishlist', Auto, Wishlist);
 
 app.post('/', (req, res) => {
     console.log('sbdjsbdjsbdjsbdjsbdjsbdsbjdbsjdbsdbsjbdjsbdjsbdjsb')
@@ -81,7 +81,7 @@ app.post('/', (req, res) => {
 })
 
 
-app.use('/registration/', exitAuto, Registration);
+app.use('/registration/', ExitAuto, Registration);
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
     console.log(`Your port liveing on http://localhost:${port} this host`)

@@ -1,7 +1,11 @@
 const bigSearchBtns = document.querySelectorAll('.bigSearch .btn');
+const searchBtn = document.getElementById('searchBtn');
 
 bigSearchBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+        searchObj.category = btn.getAttribute('data-category');
+        const { category, location, price, property } = searchObj;
+        searchBtn.href = `/catalog?categoryType=${category}&location=${location}&price=${price}&property=${property}`
         bigSearchBtns.forEach(btn => {
             btn.classList.remove('active')
         })
@@ -23,6 +27,20 @@ lists.forEach((list, i1) => {
     })
 })
 
-const likeBtns = document.querySelectorAll('#popular .likeBtn');
 
-likeBtns.forEach(val => val.addEventListener('click', () => val.classList.toggle('active')));
+const linkSelects = document.querySelectorAll('.linkSelect');
+
+const searchObj = {
+    category: document.querySelector('.bigSearch .btn.active').getAttribute('data-category'),
+    location: '',
+    price: '',
+    property: ''
+}
+
+linkSelects.forEach(select => {
+    select.addEventListener('change', (evn) => {
+        searchObj[evn.target.name] = evn.target.value;
+        const { category, location, price, property } = searchObj;
+        searchBtn.href = `/catalog?categoryType=${category}&location=${location}&price=${price}&property=${property}`
+    })
+})

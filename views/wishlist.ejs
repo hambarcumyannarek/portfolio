@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wishlist</title>
+    <link rel="stylesheet" href="/css/wishlist.css">
+
+      <!-- Font-Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <%- include('navbar.ejs') %>
+
+    <div id="wishlist" class="section">
+        <div class="container wishlistContainer">
+            <div class="top">
+                <h2 class="title">Wishes</h2>
+                <p>You have <span class="wishlistLength"><%= products.length %></span> items in your wishlist. See a version of this template for signed-in customer.</p>
+            </div>
+
+            <div class="boxes">
+                <% products.forEach((box) => { %>
+                    <div class="box" id="<%= box.productId %>">
+                        <div class="img">
+                            <img src="/images/upload/<%= box.images %>"" alt="...">
+                            <div class="imgTop">
+                                <p class="type">For <%= box.category %></p>
+                                <button class="likeBtn" data-productId="<%= box.productId %>" title="remove from wishlist">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="top">
+                                <h3><%= box.productName%></h3>
+                                <div class="location">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>In <%= box.location %> city and home address <%= box.homeAddress %></span>
+                                </div>
+                                <div class="info">
+                                    <div class="card"><i class="fa-solid fa-bed"></i> <span><%= box.bedRooms %></span></div>
+                                    <div class="card"><i class="fa-solid fa-bath"></i> <span><%= box.bathRooms %></span></div>
+                                </div>
+                            </div>
+                            <div class="down">
+                                <span class="price"><b>$<%= box.price %>/</b> Night</span>
+                                <a href="/single/<%= box.productId %>"><button class="btn">View More</button></a>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+
+    <%- include('footer.ejs') %>
+
+    <script src="/scripts/nav.js" defer></script>
+    <script src="/scripts/wishlist.js" defer></script>
+</body>
+</html>
