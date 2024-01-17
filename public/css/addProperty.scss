@@ -331,6 +331,20 @@
                 }
             }
         }
+        .addButton  {
+            font-size: 1em;
+            max-width: 200px;
+            background: var(--blue);
+            border-radius: 5px;
+            box-shadow: var(--black-box-shadow);
+            cursor: pointer;
+            color: var(--white);
+            transition: all .5s;
+
+            &:hover {
+                background: rgb(13, 69, 148);
+            }
+        }
     }
 }
 

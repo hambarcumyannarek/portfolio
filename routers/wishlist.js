@@ -12,20 +12,21 @@ router.get('/', async (req, res) => {
     res.render('wishlist.ejs', {products});
 })
 
-router.post('/', async (req, res) => {
-    const addDB = await pool.query('insert into wishlist(userId, productId) values(?, ?)', [req.user.id, req.body.productId])
+router.post('/:productId', async (req, res) => {
+    console.log(req.body)
+    const addDB = await pool.query('insert into wishlist(userId, productId) values(?, ?)', [req.user.id, req.params.productId])
     if(!addDB) {
         return res.status(404).send(`request faild: ${addDB}`)
     }
     res.send('');
 })
 
-router.delete('/', async (req, res) => {
-    const deleteDB = await pool.query('delete from wishlist where userId = ? and productId = ?', [req.user.id, req.body.productId])
+router.delete('/:productId', async (req, res) => {
+    const deleteDB = await pool.query('delete from wishlist where userId = ? and productId = ?', [req.user.id, req.params.productId])
     if(!deleteDB) {
         return res.status(404).send(`request faild: ${deleteDB}`)
     }
-    console.log(req.body);
+    console.log(req.params);
     res.send('');
 })
 

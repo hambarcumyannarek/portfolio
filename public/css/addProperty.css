@@ -991,6 +991,19 @@ nav .navContainer .icons .menuBtn {
   height: 100%;
   border-radius: 15px;
 }
+#addProperty .addPropertyContainer .addButton {
+  font-size: 1em;
+  max-width: 200px;
+  background: var(--blue);
+  border-radius: 5px;
+  box-shadow: var(--black-box-shadow);
+  cursor: pointer;
+  color: var(--white);
+  transition: all 0.5s;
+}
+#addProperty .addPropertyContainer .addButton:hover {
+  background: rgb(13, 69, 148);
+}
 
 @media screen and (max-width: 900px) {
   #addProperty .addPropertyContainer form .addPhotos .fileLabel .images {

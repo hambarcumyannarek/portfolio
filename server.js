@@ -4,7 +4,6 @@ const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const crypto = require('crypto');
 const methodOverride = require('method-override');
-crypto.r
 // ===== Libraries Requires End ===== //
 
 
@@ -17,6 +16,7 @@ const AddProperty = require('./routers/addProperty');
 const Single = require('./routers/single');
 const Catalog = require('./routers/catalog');
 const Wishlist = require('./routers/wishlist');
+const pool = require('./collaboration/DB');
 // ===== Files Requires End ===== //
 
 const app = express();
@@ -44,10 +44,10 @@ app.set('views-engine', 'ejs')
         const { _csrf } = req.body;
         console.log(req.path)
         console.log(req.method)
-        if (req.method === 'GET' || req.path === '/addProperty' && req.method === 'POST' || req.path === '/addProperty' && req.method === 'PUT' || req.path === '/catalog' && req.method === 'POST' || req.path === '/wishlist' && req.method === 'POST' || req.path === '/wishlist' && req.method === 'DELETE') {
+        if (req.method === 'GET' || req.path === '/addProperty' && req.method === 'POST' || req.path === '/addProperty' && req.method === 'PUT' || req.path === '/catalog' && req.method === 'POST' || req.path.search('/wishlist') !== -1 || req.path === '/mode') {
             console.log('auto');
             return next();
-        }else if (_csrf === req.cookies.csrfToken) {
+        } else if (_csrf === req.cookies.csrfToken) {
             console.log({
                 html: _csrf,
                 cookie: req.cookies.csrfToken
@@ -67,11 +67,11 @@ app.get('/profil', Auto, (req, res) => {
     res.send(req.user)
 })
 
-app.use('/catalog', Auto, Catalog)
+app.use('/catalog', Auto, Catalog);
 
 app.use('/addProperty', Auto, AddProperty);
 
-app.use('/single', Single);
+app.use('/single', Auto, Single);
 
 app.use('/wishlist', Auto, Wishlist);
 

@@ -72,6 +72,7 @@ router.post('/signin', async (req, res, next) => {
                 id: findUser[0].id,
                 name: findUser[0].name,
                 email: findUser[0].email,
+                mode: findUser[0].webBg,
             }, process.env.JWT_SECRET);
             res.cookie('JWT_SIGN', sign);
             return res.redirect('/');

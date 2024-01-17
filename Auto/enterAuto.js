@@ -8,6 +8,7 @@ async function Auto(req, res, next) {
 
     const user = JWT.verify(getCookie, process.env.JWT_SECRET);
     req.user = user;
+    res.cookie('mode', user.mode)
     next();
 }
 
