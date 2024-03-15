@@ -1,1 +1,6 @@
-PORT="your port"
+PORT=3001
+HOST='localhost'
+USER="root"
+DB_NAME='portfolio'
+DB_PASSWORD="........."
+JWT_SECRET='secret'

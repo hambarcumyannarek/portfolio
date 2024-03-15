@@ -38,6 +38,11 @@ router.post('/', async (req, res) => {
         var [maxNum] = await pool.query('select max(price) from products');
         maxNum = maxNum[0]['max(price)']
     }
+    // const propertyArr = property.split(',');
+    // propertyArr.reduce((aggr, val, i) => {
+    //     return aggr += `"${val}"` + (i !== propertyArr.length-1 ? ',' : '');
+    //  }, '')
+
     if (property) {
         let makeString = JSON.stringify(property.split(','));
         var charProperty = makeString.slice(1, makeString.length - 1)
@@ -51,7 +56,6 @@ router.post('/', async (req, res) => {
             images: product.images.split(' ')[0]
         }
     })
-    console.log(products);
     res.send({products, categoryType, likeBtns});
 })
 

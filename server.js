@@ -37,7 +37,7 @@ app.set('views-engine', 'ejs')
     .use(async (req, res, next) => {
         const csrfToken = await crypto.randomBytes(77).toString('hex');
         res.locals.csrfToken = csrfToken;
-        res.cookie('csrfToken', csrfToken);
+        res.cookie('csrfToken', csrfToken, {httpOnly: true, secure: true, sameSite: 'Strict'});
         next();
     })
     .use(async (req, res, next) => {
@@ -57,8 +57,7 @@ app.set('views-engine', 'ejs')
     })
 
 app.get('/', Auto, (req, res) => {
-    console.log(req.user)
-    res.render('home.ejs', { name: 'Narek' });
+    res.render('home.ejs');
 })
 
 // experiments
@@ -76,7 +75,6 @@ app.use('/single', Auto, Single);
 app.use('/wishlist', Auto, Wishlist);
 
 app.post('/', (req, res) => {
-    console.log('sbdjsbdjsbdjsbdjsbdjsbdsbjdbsjdbsdbsjbdjsbdjsbdjsb')
     res.render('home.ejs', { name: 'Narek' });
 })
 

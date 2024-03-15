@@ -79,7 +79,7 @@ function sendDate(catalogAside) {
     const maxPrice = catalogAside.querySelector('.price .maxPrice').value;
     const chooseBed = catalogAside.querySelector('.rooms .chooseBed .active') ? catalogAside.querySelector('.rooms .chooseBed .active').getAttribute('data-count') : '';
     const chooseBath = catalogAside.querySelector('.rooms .chooseBath .active') ? catalogAside.querySelector('.rooms .chooseBath .active').getAttribute('data-count') : '';
-   
+
     checkBox.forEach(box => {
         if (box.querySelector('input').checked === true) {
             property.push(box.querySelector('input').getAttribute('data-property'));
@@ -144,11 +144,11 @@ function sendDate(catalogAside) {
     }).catch(err => console.log(err))
 }
 
-import { update } from "./addWishlist.js";
 
 filterButton.forEach(btn => {
     btn.addEventListener('click', () => {
-        if(btn.parentElement.className.search('responsiveFilters') !== -1) responsiveFilters.classList.remove('active') 
+        if (document.body.style.overflowY === 'hidden') document.body.style.overflowY = 'auto';
+        if (btn.parentElement.className.search('responsiveFilters') !== -1) responsiveFilters.classList.remove('active')
         sendDate(btn.parentElement)
     })
 })

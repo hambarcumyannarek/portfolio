@@ -1,0 +1,43 @@
+=========== users ===========
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int          | NO   | PRI | NULL    | auto_increment |
+| name     | varchar(50)  | NO   |     | NULL    |                |
+| email    | varchar(200) | NO   |     | NULL    |                |
+| password | varchar(200) | NO   |     | NULL    |                |
+| webBg    | varchar(20)  | YES  |     | light   |                |
++----------+--------------+------+-----+---------+----------------+
+
+
+=========== products ===========
+
++--------------+---------------+------+-----+---------+----------------+
+| Field        | Type          | Null | Key | Default | Extra          |
++--------------+---------------+------+-----+---------+----------------+
+| id           | int           | NO   | PRI | NULL    | auto_increment |
+| userId       | int           | NO   | MUL | NULL    |                |
+| productName  | varchar(500)  | NO   |     | NULL    |                |
+| homeAddress  | varchar(500)  | NO   |     | NULL    |                |
+| bedRooms     | varchar(10)   | NO   |     | NULL    |                |
+| bathRooms    | varchar(10)   | NO   |     | NULL    |                |
+| parkingPlace | varchar(10)   | NO   |     | NULL    |                |
+| location     | varchar(500)  | NO   |     | NULL    |                |
+| description  | varchar(1500) | NO   |     | NULL    |                |
+| price        | int           | NO   |     | NULL    |                |
+| images       | text          | NO   |     | NULL    |                |
+| date         | varchar(100)  | NO   |     | NULL    |                |
+| category     | varchar(100)  | NO   |     | NULL    |                |
+| property     | varchar(300)  | NO   |     | NULL    |                |
++--------------+---------------+------+-----+---------+----------------+
+
+
+=========== wishlist ===========
+
++-----------+------+------+-----+---------+----------------+
+| Field     | Type | Null | Key | Default | Extra          |
++-----------+------+------+-----+---------+----------------+
+| id        | int  | NO   | PRI | NULL    | auto_increment |
+| userId    | int  | NO   | MUL | NULL    |                |
+| productId | int  | NO   | MUL | NULL    |                |
++-----------+------+------+-----+---------+----------------+

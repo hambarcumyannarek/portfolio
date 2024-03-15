@@ -47,7 +47,7 @@ darkBtn.forEach(btn => {
         document.body.classList.toggle('darkMode');
         darkBtn.forEach(btn => btn.classList.toggle('active'))
         const logo = document.querySelectorAll('.logo img');
-        if(document.body.className.search('darkMode') !== -1) {
+        if(document.body.className.includes('darkMode')) {
             return logo.forEach(img => {
                 img.src = '/images/logo-white.png';
             })

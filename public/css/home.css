@@ -1040,7 +1040,7 @@ nav .navContainer .icons .menuBtn {
   color: var(--blue);
 }
 #hero .container .content .bigSearch .searchCont button {
-  padding: 10px;
+  padding: 15px 20px;
   background: var(--blue);
   color: var(--allMode-white);
   font-size: 0.9em;
